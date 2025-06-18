@@ -40,7 +40,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
 
   return (
     <>
-      {/* Tombol menu tetap tampil di kiri atas */}
+      {/* Tombol menu hanya saat sidebar tertutup */}
       {!isSidebarOpen && (
         <IconButton
           onClick={() => setIsSidebarOpen(true)}
@@ -48,7 +48,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             position: "fixed",
             top: 10,
             left: 10,
-            zIndex: 1100,
+            zIndex: 1200,
             color: "white",
             backgroundColor: "#333",
             "&:hover": {
@@ -60,22 +60,6 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         </IconButton>
       )}
 
-      {/* Overlay saat sidebar terbuka */}
-      {isSidebarOpen && (
-        <Box
-          onClick={() => setIsSidebarOpen(false)}
-          sx={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            backgroundColor: "rgba(0,0,0,0.5)",
-            zIndex: 999,
-          }}
-        />
-      )}
-
       {/* Sidebar */}
       <Box
         sx={{
@@ -84,7 +68,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           left: 0,
           height: "100vh",
           width: "260px",
-          zIndex: 1000,
+          zIndex: 1100,
           backgroundColor: colors.primary[400],
           transform: isSidebarOpen ? "translateX(0)" : "translateX(-100%)",
           transition: "transform 0.3s ease-in-out",
@@ -107,21 +91,16 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       >
         <ProSidebar>
           <Menu iconShape="square">
-            {/* Tombol tutup */}
             <MenuItem
               onClick={() => setIsSidebarOpen(false)}
               icon={<MenuOutlinedIcon />}
-              style={{
-                margin: "10px 0 20px 0",
-                color: colors.grey[100],
-              }}
+              style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
             >
               <Typography variant="h3" color={colors.grey[100]}>
                 ADMINIS
               </Typography>
             </MenuItem>
 
-            {/* Profile */}
             <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
@@ -147,7 +126,6 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
               </Box>
             </Box>
 
-            {/* Menu */}
             <Box>
               <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
               <Item title="Manage Team" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} />
@@ -164,6 +142,22 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           </Menu>
         </ProSidebar>
       </Box>
+
+      {/* Overlay */}
+      {isSidebarOpen && (
+        <Box
+          onClick={() => setIsSidebarOpen(false)}
+          sx={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.5)",
+            zIndex: 1000,
+          }}
+        />
+      )}
     </>
   );
 };
