@@ -64,15 +64,17 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       <Box
         sx={{
           position: "fixed",
-          top: 0,
-          left: 0,
-          height: "100vh",
+          top: "16px",
+          left: "16px",
+          height: "95vh",
           width: "220px",
           overflowY: "hidden",
           zIndex: 1100,
           backgroundColor: colors.primary[400],
           transform: isSidebarOpen ? "translateX(0)" : "translateX(-100%)",
           transition: "transform 0.3s ease-in-out",
+          borderTopRightRadius: "16px",
+          borderBottomRightRadius: "16px",
           boxShadow: "4px 0 8px rgba(0,0,0,0.2)",
           "& .pro-sidebar-inner": {
             background: `${colors.primary[400]} !important`,
