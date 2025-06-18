@@ -40,16 +40,16 @@ const Dashboard = () => {
         alignItems={{ xs: "flex-start", sm: "center" }}
         gap="10px"
       >
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title="DASHBOARD" subtitle="PENDATAAN SENTRA EKONOMI" />
         <Button
           sx={{
             backgroundColor: colors.blueAccent[700],
             color: colors.grey[100],
             fontSize: "14px",
             fontWeight: "bold",
-            px: 3,
+            px: 2,
             py: 1.5,
-            borderRadius: "8px",
+            borderRadius: "12px",
           }}
         >
           <DownloadOutlinedIcon sx={{ mr: 1 }} />
