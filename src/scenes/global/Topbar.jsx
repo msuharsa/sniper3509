@@ -37,6 +37,7 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           borderRadius="12px"
           overflow="hidden"
           flex={1}
+          ml={6}
         >
           <InputBase
             sx={{

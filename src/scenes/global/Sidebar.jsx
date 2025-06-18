@@ -101,10 +101,10 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             <MenuItem
               onClick={() => setIsSidebarOpen(false)}
               icon={<MenuOutlinedIcon />}
-              style={{ margin: "10px 0 20px 0", color: colors.blueAccent[600] }}
+              style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
             >
               <Typography variant="h3" color={colors.grey[100]}>
-                ADMINIS
+                SNIPER3509
               </Typography>
             </MenuItem>
 
@@ -125,7 +125,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Ed Roh
+                  BPS Kabupaten Jember
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   VP Fancy Admin
