@@ -66,7 +66,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       <Box
         sx={{
           position: "fixed",
-          top: "94px",
+          top: "16px",
           left: "16px",
           height: "95vh",
           width: "220px",
@@ -101,7 +101,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             <MenuItem
               onClick={() => setIsSidebarOpen(false)}
               icon={<MenuOutlinedIcon />}
-              style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
+              style={{ margin: "10px 0 20px 0", color: colors.blueAccent[600] }}
             >
               <Typography variant="h3" color={colors.grey[100]}>
                 ADMINIS
