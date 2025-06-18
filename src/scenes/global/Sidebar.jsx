@@ -46,11 +46,11 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           onClick={() => setIsSidebarOpen(true)}
           sx={{
             position: "fixed",
-            top: 15,
+            top: 14,
             left: 13,
             zIndex: 1200,
             color: colors.grey[100],
-            backgroundColor: colors.primary[400],
+            backgroundColor: colors.blueAccent[600],
             borderRadius: "8px",
             boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
             "&:hover": {
@@ -120,7 +120,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
               </Box>
               <Box textAlign="center">
                 <Typography
-                  variant="h3"
+                  variant="h4"
                   color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}

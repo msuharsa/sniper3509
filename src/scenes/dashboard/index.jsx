@@ -47,9 +47,10 @@ const Dashboard = () => {
             color: colors.grey[100],
             fontSize: "14px",
             fontWeight: "bold",
-            px: 2,
+            px: 3,
             py: 1.5,
             borderRadius: "12px",
+            mb: 2,
           }}
         >
           <DownloadOutlinedIcon sx={{ mr: 1 }} />
