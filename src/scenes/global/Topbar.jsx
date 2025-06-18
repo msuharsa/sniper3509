@@ -30,7 +30,7 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
     >
       {/* Kiri: Tombol Menu (mobile) + Search */}
       <Box display="flex" alignItems="center" gap={1} flex={1}>
-        {isMobile && (
+//       {isMobile && (
 //          <IconButton
 //            onClick={() => setIsSidebarOpen(true)}
 //            sx={{
@@ -45,7 +45,7 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
 //          >
 //            <MenuOutlinedIcon />
 //          </IconButton>
-        )}
+//        )}
         <Box
           display="flex"
           alignItems="center"
