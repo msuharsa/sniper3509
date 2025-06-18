@@ -63,6 +63,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         sx={{
           position: "fixed",
           top: "16px",
+<<<<<<< HEAD
           left: "12px",
           height: "80vh",
           width: "clamp(200px, 80vw, 280px)", // Lebar responsif
@@ -75,6 +76,18 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           borderTopLeftRadius: "16px",
           borderTopRightRadiuss: "16px",
           orderBottomLeftRadius: "16px",
+=======
+          left: "16px",
+          height: "95vh",
+          width: "clamp(200px, 80vw, 280px)", // Lebar responsif
+          maxWidth: "100vw", // Tidak melebihi layar
+          overflowY: "auto", // Aktifkan scroll vertikal kalau konten banyak
+          zIndex: 1100,
+          backgroundColor: colors.primary[400],
+          transform: isSidebarOpen ? "translateX(0)" : "translateX(calc(-100% - 16px))",
+          transition: "transform 0.3s ease-in-out",
+          borderTopRightRadius: "16px",
+>>>>>>> 5c5fb2e729eac12c69ce3ec0de254e7162692ad6
           borderBottomRightRadius: "16px",
           boxShadow: "4px 0 8px rgba(0,0,0,0.2)",
           "& .pro-sidebar-inner": {
@@ -119,27 +132,53 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
               </Box>
               <Box textAlign="center">
                 <Typography
+<<<<<<< HEAD
                   variant="h5"
+=======
+                  variant="h4"
+>>>>>>> 5c5fb2e729eac12c69ce3ec0de254e7162692ad6
                   color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
+<<<<<<< HEAD
                   Strategi dan Mitigasi
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   Persiapan SE2026 Kabupaten Jember
+=======
+                  BPS Kabupaten Jember
+                </Typography>
+                <Typography variant="h6" color={colors.greenAccent[500]}>
+                  Dashboard Persiapan SE2026
+>>>>>>> 5c5fb2e729eac12c69ce3ec0de254e7162692ad6
                 </Typography>
               </Box>
             </Box>
 
             <Box>
               <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
+<<<<<<< HEAD
               <Item title="Progres Pendataan Pasar" to="/bar" icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
               <Item title="Progres Matchapro" to="/pie" icon={<PieChartOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
               <Item title="Database" to="/line" icon={<TimelineOutlinedIcon />} selected={selected} setSelected={setSelected} />
               <Item title="Peta Sarana Ekonomi" to="/geography" icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} />
               <Item title="Tim dan Kontak" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} />
               <Item title="QnA" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
+=======
+              <Item title="Manage Team" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              
+{/*              <Item title="Contacts" to="/contacts" icon={<ContactsOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Invoices" to="/invoices" icon={<ReceiptOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Profile Form" to="/form" icon={<PersonOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Calendar" to="/calendar" icon={<CalendarTodayOutlinedIcon />} selected={selected} setSelected={setSelected} />
+      */}
+              <Item title="FAQ" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Bar Chart" to="/bar" icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Pie Chart" to="/pie" icon={<PieChartOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Line Chart" to="/line" icon={<TimelineOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Geography" to="/geography" icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} />
+>>>>>>> 5c5fb2e729eac12c69ce3ec0de254e7162692ad6
             </Box>
           </Menu>
         </ProSidebar>
