@@ -46,8 +46,8 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           onClick={() => setIsSidebarOpen(true)}
           sx={{
             position: "fixed",
-            top: 14,
-            left: 14,
+            top: 15,
+            left: 13,
             zIndex: 1200,
             color: colors.grey[100],
             backgroundColor: colors.primary[400],

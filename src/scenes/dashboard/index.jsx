@@ -25,6 +25,11 @@ const Dashboard = () => {
   const colors = tokens(theme.palette.mode);
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+  const cardStyle = {
+    backgroundColor: colors.primary[400],
+    borderRadius: "12px",
+  };
+
   return (
     <Box m={{ xs: "10px", sm: "20px" }}>
       {/* HEADER */}
@@ -44,6 +49,7 @@ const Dashboard = () => {
             fontWeight: "bold",
             px: 3,
             py: 1.5,
+            borderRadius: "8px",
           }}
         >
           <DownloadOutlinedIcon sx={{ mr: 1 }} />
@@ -64,10 +70,10 @@ const Dashboard = () => {
             <Box
               key={i}
               gridColumn={{ xs: "span 12", sm: "span 3" }}
-              backgroundColor={colors.primary[400]}
               display="flex"
               alignItems="center"
               justifyContent="center"
+              sx={cardStyle}
             >
               <StatBox
                 title={["12,361", "431,225", "32,441", "1,325,134"][i]}
@@ -87,11 +93,11 @@ const Dashboard = () => {
           )
         )}
 
-        {/* ROW 2 - Line Chart + Transactions */}
+        {/* ROW 2 - Line Chart */}
         <Box
           gridColumn={{ xs: "span 12", sm: "span 8" }}
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          sx={cardStyle}
         >
           <Box
             mt="25px"
@@ -124,11 +130,11 @@ const Dashboard = () => {
           </Box>
         </Box>
 
+        {/* ROW 2 - Transactions */}
         <Box
           gridColumn={{ xs: "span 12", sm: "span 4" }}
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          overflow="auto"
+          sx={{ ...cardStyle, overflow: "auto" }}
         >
           <Box
             display="flex"
@@ -172,12 +178,12 @@ const Dashboard = () => {
           ))}
         </Box>
 
-        {/* ROW 3 */}
+        {/* ROW 3 - Campaign */}
         <Box
           gridColumn={{ xs: "span 12", sm: "span 4" }}
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
           p="30px"
+          sx={cardStyle}
         >
           <Typography variant="h5" fontWeight="600">
             Campaign
@@ -201,11 +207,13 @@ const Dashboard = () => {
             </Typography>
           </Box>
         </Box>
+
+        {/* ROW 3 - Sales Quantity */}
         <Box
           gridColumn={{ xs: "span 12", sm: "span 4" }}
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
           p="30px"
+          sx={cardStyle}
         >
           <Typography variant="h5" fontWeight="600" mb="15px">
             Sales Quantity
@@ -214,11 +222,13 @@ const Dashboard = () => {
             <BarChart isDashboard={true} />
           </Box>
         </Box>
+
+        {/* ROW 3 - Geography Chart */}
         <Box
           gridColumn={{ xs: "span 12", sm: "span 4" }}
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
           p="30px"
+          sx={cardStyle}
         >
           <Typography variant="h5" fontWeight="600" mb="15px">
             Geography Based Traffic
