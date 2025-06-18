@@ -26,31 +26,35 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Box display="flex">
-          {/* Sidebar Floating */}
-          <Box
-            position="fixed"
-            top={0}
-            left={isSidebarOpen || isDesktop ? 0 : "-260px"}
-            height="100vh"
-            width="260px"
-            zIndex={1300}
-            sx={{
-              transition: "left 0.3s ease-in-out",
-              backgroundColor: theme.palette.background.default,
-              boxShadow: "2px 0 8px rgba(0,0,0,0.2)",
-            }}
-          >
-            <Sidebar isSidebar={true} />
-          </Box>
+          {/* Sidebar */}
+          <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+
+          {/* Overlay saat sidebar terbuka di mobile */}
+          {!isDesktop && isSidebarOpen && (
+            <Box
+              onClick={() => setIsSidebarOpen(false)}
+              sx={{
+                position: "fixed",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh",
+                backgroundColor: "rgba(0,0,0,0.5)",
+                zIndex: 999,
+              }}
+            />
+          )}
 
           {/* Main Content */}
           <Box
             flexGrow={1}
             ml={isDesktop ? "260px" : 0}
             width="100%"
+            sx={{
+              transition: "margin-left 0.3s ease-in-out",
+            }}
           >
-            {/* ✅ Prop ini harus sesuai dengan Topbar.jsx */}
-            <Topbar setIsSidebarOpen={setIsSidebarOpen} />
+            <Topbar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
