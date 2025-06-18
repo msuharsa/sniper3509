@@ -66,11 +66,12 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       <Box
         sx={{
           position: "fixed",
-          width: isCollapsed ? "64px" : "220px",
-          maxWidth: "100vw",
+          top: "16px",
+          left: "16px",
           height: "95vh",
-          width: "220px",
-          overflowY: "hidden",
+          width: "clamp(200px, 80vw, 280px)", // Lebar responsif
+          maxWidth: "100vw", // Tidak melebihi layar
+          overflowY: "auto", // Aktifkan scroll vertikal kalau konten banyak
           zIndex: 1100,
           backgroundColor: colors.primary[400],
           transform: isSidebarOpen ? "translateX(0)" : "translateX(calc(-100% - 16px))",
