@@ -66,7 +66,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       <Box
         sx={{
           position: "fixed",
-          top: "24px",
+          top: "48px",
           left: "16px",
           height: "95vh",
           width: "220px",

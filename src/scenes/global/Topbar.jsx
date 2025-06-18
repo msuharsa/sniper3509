@@ -34,7 +34,7 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           <IconButton
             onClick={() => setIsSidebarOpen(true)}
             sx={{
-              backgroundColor: colors.primary[500],
+              backgroundColor: colors.blueAccent[700],
               color: colors.grey[100],
               borderRadius: "12px",
               p: 1,
@@ -49,7 +49,7 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         <Box
           display="flex"
           alignItems="center"
-          backgroundColor={colors.blueAccent[600]}
+          backgroundColor={colors.primary[500]}
           borderRadius="12px"
           overflow="hidden"
           flex={1}
