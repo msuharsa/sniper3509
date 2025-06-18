@@ -26,6 +26,7 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       top={0}
       zIndex={1200}
       bgcolor={colors.primary[400]}
+      height="48px"
     >
       {/* Kiri: Tombol Menu (mobile) + Search */}
       <Box display="flex" alignItems="center" gap={1} flex={1}>
@@ -48,7 +49,7 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         <Box
           display="flex"
           alignItems="center"
-          backgroundColor={colors.primary[500]}
+          backgroundColor={colors.blueAccent[600]}
           borderRadius="12px"
           overflow="hidden"
           flex={1}
