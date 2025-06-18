@@ -40,7 +40,27 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
 
   return (
     <>
-      {/* Overlay */}
+      {/* Tombol menu tetap tampil di kiri atas */}
+      {!isSidebarOpen && (
+        <IconButton
+          onClick={() => setIsSidebarOpen(true)}
+          sx={{
+            position: "fixed",
+            top: 10,
+            left: 10,
+            zIndex: 1100,
+            color: "white",
+            backgroundColor: "#333",
+            "&:hover": {
+              backgroundColor: "#444",
+            },
+          }}
+        >
+          <MenuOutlinedIcon />
+        </IconButton>
+      )}
+
+      {/* Overlay saat sidebar terbuka */}
       {isSidebarOpen && (
         <Box
           onClick={() => setIsSidebarOpen(false)}
@@ -50,99 +70,100 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             left: 0,
             width: "100vw",
             height: "100vh",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            backgroundColor: "rgba(0,0,0,0.5)",
             zIndex: 999,
           }}
         />
       )}
 
       {/* Sidebar */}
-      {isSidebarOpen && (
-        <Box
-          sx={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            height: "100vh",
-            width: "260px",
-            zIndex: 1000,
-            "& .pro-sidebar-inner": {
-              background: `${colors.primary[400]} !important`,
-            },
-            "& .pro-icon-wrapper": {
-              backgroundColor: "transparent !important",
-            },
-            "& .pro-inner-item": {
-              padding: "5px 35px 5px 20px !important",
-            },
-            "& .pro-inner-item:hover": {
-              color: "#868dfb !important",
-            },
-            "& .pro-menu-item.active": {
-              color: "#6870fa !important",
-            },
-          }}
-        >
-          <ProSidebar>
-            <Menu iconShape="square">
-              {/* Header */}
-              <MenuItem
-                onClick={() => setIsSidebarOpen(false)}
-                icon={<MenuOutlinedIcon />}
-                style={{
-                  margin: "10px 0 20px 0",
-                  color: colors.grey[100],
-                }}
-              >
-                <Typography variant="h3" color={colors.grey[100]}>
-                  ADMINIS
+      <Box
+        sx={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          height: "100vh",
+          width: "260px",
+          zIndex: 1000,
+          backgroundColor: colors.primary[400],
+          transform: isSidebarOpen ? "translateX(0)" : "translateX(-100%)",
+          transition: "transform 0.3s ease-in-out",
+          "& .pro-sidebar-inner": {
+            background: `${colors.primary[400]} !important`,
+          },
+          "& .pro-icon-wrapper": {
+            backgroundColor: "transparent !important",
+          },
+          "& .pro-inner-item": {
+            padding: "5px 35px 5px 20px !important",
+          },
+          "& .pro-inner-item:hover": {
+            color: "#868dfb !important",
+          },
+          "& .pro-menu-item.active": {
+            color: "#6870fa !important",
+          },
+        }}
+      >
+        <ProSidebar>
+          <Menu iconShape="square">
+            {/* Tombol tutup */}
+            <MenuItem
+              onClick={() => setIsSidebarOpen(false)}
+              icon={<MenuOutlinedIcon />}
+              style={{
+                margin: "10px 0 20px 0",
+                color: colors.grey[100],
+              }}
+            >
+              <Typography variant="h3" color={colors.grey[100]}>
+                ADMINIS
+              </Typography>
+            </MenuItem>
+
+            {/* Profile */}
+            <Box mb="25px">
+              <Box display="flex" justifyContent="center" alignItems="center">
+                <img
+                  alt="profile-user"
+                  width="100px"
+                  height="100px"
+                  src={`../../assets/user.png`}
+                  style={{ cursor: "pointer", borderRadius: "50%" }}
+                />
+              </Box>
+              <Box textAlign="center">
+                <Typography
+                  variant="h2"
+                  color={colors.grey[100]}
+                  fontWeight="bold"
+                  sx={{ m: "10px 0 0 0" }}
+                >
+                  Ed Roh
                 </Typography>
-              </MenuItem>
-
-              {/* Profile */}
-              <Box mb="25px">
-                <Box display="flex" justifyContent="center" alignItems="center">
-                  <img
-                    alt="profile-user"
-                    width="100px"
-                    height="100px"
-                    src={`../../assets/user.png`}
-                    style={{ cursor: "pointer", borderRadius: "50%" }}
-                  />
-                </Box>
-                <Box textAlign="center">
-                  <Typography
-                    variant="h2"
-                    color={colors.grey[100]}
-                    fontWeight="bold"
-                    sx={{ m: "10px 0 0 0" }}
-                  >
-                    Ed Roh
-                  </Typography>
-                  <Typography variant="h5" color={colors.greenAccent[500]}>
-                    VP Fancy Admin
-                  </Typography>
-                </Box>
+                <Typography variant="h5" color={colors.greenAccent[500]}>
+                  VP Fancy Admin
+                </Typography>
               </Box>
+            </Box>
 
-              {/* Menu Items */}
-              <Box>
-                <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
-                <Item title="Manage Team" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} />
-                <Item title="Contacts" to="/contacts" icon={<ContactsOutlinedIcon />} selected={selected} setSelected={setSelected} />
-                <Item title="Invoices" to="/invoices" icon={<ReceiptOutlinedIcon />} selected={selected} setSelected={setSelected} />
-                <Item title="Profile Form" to="/form" icon={<PersonOutlinedIcon />} selected={selected} setSelected={setSelected} />
-                <Item title="Calendar" to="/calendar" icon={<CalendarTodayOutlinedIcon />} selected={selected} setSelected={setSelected} />
-                <Item title="FAQ" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
-                <Item title="Bar Chart" to="/bar" icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
-                <Item title="Pie Chart" to="/pie" icon={<PieChartOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
-                <Item title="Line Chart" to="/line" icon={<TimelineOutlinedIcon />} selected={selected} setSelected={setSelected} />
-                <Item title="Geography" to="/geography" icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              </Box>
-            </Menu>
-          </ProSidebar>
-        </Box>
-      )}
+            {/* Menu */}
+            <Box>
+              <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Manage Team" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Contacts" to="/contacts" icon={<ContactsOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Invoices" to="/invoices" icon={<ReceiptOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Profile Form" to="/form" icon={<PersonOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Calendar" to="/calendar" icon={<CalendarTodayOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="FAQ" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Bar Chart" to="/bar" icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Pie Chart" to="/pie" icon={<PieChartOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Line Chart" to="/line" icon={<TimelineOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Geography" to="/geography" icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} />
+            </Box>
+          </Menu>
+        </ProSidebar>
+      </Box>
     </>
   );
 };
