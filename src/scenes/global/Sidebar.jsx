@@ -6,10 +6,6 @@ import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
@@ -46,13 +42,15 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           onClick={() => setIsSidebarOpen(true)}
           sx={{
             position: "fixed",
-            top: 10,
-            left: 10,
+            top: 14,
+            left: 13,
             zIndex: 1200,
-            color: "white",
-            backgroundColor: "#333",
+            color: colors.grey[100],
+            backgroundColor: colors.blueAccent[600],
+            borderRadius: "8px",
+            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
             "&:hover": {
-              backgroundColor: "#444",
+              backgroundColor: colors.primary[500],
             },
           }}
         >
@@ -64,15 +62,20 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       <Box
         sx={{
           position: "fixed",
-          top: 0,
-          left: 0,
-          height: "100vh",
-          width: "260px",
-          overflowY: "hidden",
+          top: "16px",
+          left: "12px",
+          height: "80vh",
+          width: "clamp(200px, 80vw, 280px)", // Lebar responsif
+          maxWidth: "100vw", // Tidak melebihi layar
+          overflowY: "hidden", // auto --> Aktifkan scroll vertikal kalau konten banyak, hidden --> nonaktifkan
           zIndex: 1100,
           backgroundColor: colors.primary[400],
-          transform: isSidebarOpen ? "translateX(0)" : "translateX(-100%)",
+          transform: isSidebarOpen ? "translateX(0)" : "translateX(calc(-100% - 12px))",
           transition: "transform 0.3s ease-in-out",
+          borderTopLeftRadius: "16px",
+          borderTopRightRadiuss: "16px",
+          orderBottomLeftRadius: "16px",
+          borderBottomRightRadius: "16px",
           boxShadow: "4px 0 8px rgba(0,0,0,0.2)",
           "& .pro-sidebar-inner": {
             background: `${colors.primary[400]} !important`,
@@ -100,47 +103,43 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
               style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
             >
               <Typography variant="h3" color={colors.grey[100]}>
-                ADMINIS
+                SNIPER3509
               </Typography>
             </MenuItem>
 
             <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
-                  alt="profile-user"
+                  alt="SNIPER3509"
                   width="100px"
                   height="100px"
-                  src={`../../assets/user.png`}
+                  src={`../../assets/Logo_Sniper.png`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
               <Box textAlign="center">
                 <Typography
-                  variant="h2"
+                  variant="h5"
                   color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Ed Roh
+                  Strategi dan Mitigasi
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VP Fancy Admin
+                  Persiapan SE2026 Kabupaten Jember
                 </Typography>
               </Box>
             </Box>
 
             <Box>
               <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Manage Team" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Contacts" to="/contacts" icon={<ContactsOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Invoices" to="/invoices" icon={<ReceiptOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Profile Form" to="/form" icon={<PersonOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Calendar" to="/calendar" icon={<CalendarTodayOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="FAQ" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Bar Chart" to="/bar" icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Pie Chart" to="/pie" icon={<PieChartOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Line Chart" to="/line" icon={<TimelineOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Geography" to="/geography" icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Progres Pendataan Pasar" to="/bar" icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Progres Matchapro" to="/pie" icon={<PieChartOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Database" to="/line" icon={<TimelineOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Peta Sarana Ekonomi" to="/geography" icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Tim dan Kontak" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="QnA" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
             </Box>
           </Menu>
         </ProSidebar>
