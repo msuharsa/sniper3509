@@ -26,25 +26,25 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       top={0}
       zIndex={1200}
       bgcolor={colors.primary[400]}
-      height="48px"
+      height="60px"
     >
       {/* Kiri: Tombol Menu (mobile) + Search */}
       <Box display="flex" alignItems="center" gap={1} flex={1}>
         {isMobile && (
-          <IconButton
-            onClick={() => setIsSidebarOpen(true)}
-            sx={{
-              backgroundColor: colors.blueAccent[700],
-              color: colors.grey[100],
-              borderRadius: "12px",
-              p: 1,
-              "&:hover": {
-                backgroundColor: colors.primary[600],
-              },
-            }}
-          >
-            <MenuOutlinedIcon />
-          </IconButton>
+//          <IconButton
+//            onClick={() => setIsSidebarOpen(true)}
+//            sx={{
+//              backgroundColor: colors.blueAccent[700],
+//             color: colors.grey[100],
+//              borderRadius: "12px",
+//              p: 1,
+//             "&:hover": {
+//                backgroundColor: colors.primary[600],
+//              },
+//            }}
+//          >
+//            <MenuOutlinedIcon />
+//          </IconButton>
         )}
         <Box
           display="flex"
