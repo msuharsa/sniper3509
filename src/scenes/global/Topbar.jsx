@@ -22,7 +22,7 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       justifyContent="space-between"
       alignItems="center"
       p={2}
-      position="sticky"
+//      position="sticky"
       top={0}
       zIndex={1200}
       bgcolor={colors.primary[400]}
