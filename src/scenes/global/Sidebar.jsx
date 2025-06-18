@@ -72,8 +72,10 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           backgroundColor: colors.primary[400],
           transform: isSidebarOpen ? "translateX(0)" : "translateX(-100%)",
           transition: "transform 0.3s ease-in-out",
+          boxShadow: "4px 0 8px rgba(0,0,0,0.2)",
           "& .pro-sidebar-inner": {
             background: `${colors.primary[400]} !important`,
+            borderRight: "none !important",
           },
           "& .pro-icon-wrapper": {
             backgroundColor: "transparent !important",
