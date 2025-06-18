@@ -46,13 +46,15 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           onClick={() => setIsSidebarOpen(true)}
           sx={{
             position: "fixed",
-            top: 10,
-            left: 10,
+            top: 14,
+            left: 14,
             zIndex: 1200,
-            color: "white",
-            backgroundColor: "#333",
+            color: colors.grey[100],
+            backgroundColor: colors.primary[400],
+            borderRadius: "8px",
+            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
             "&:hover": {
-              backgroundColor: "#444",
+              backgroundColor: colors.primary[500],
             },
           }}
         >
@@ -71,7 +73,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           overflowY: "hidden",
           zIndex: 1100,
           backgroundColor: colors.primary[400],
-          transform: isSidebarOpen ? "translateX(0)" : "translateX(-100%)",
+          transform: isSidebarOpen ? "translateX(0)" : "translateX(calc(-100% - 16px))",
           transition: "transform 0.3s ease-in-out",
           borderTopRightRadius: "16px",
           borderBottomRightRadius: "16px",
