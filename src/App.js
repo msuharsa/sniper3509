@@ -37,7 +37,7 @@ function App() {
                 position: "fixed",
                 top: 0,
                 left: 0,
-                width: "100vw",
+                width: "220px",
                 height: "100vh",
                 backgroundColor: "rgba(0,0,0,0.5)",
                 zIndex: 999,
@@ -48,7 +48,7 @@ function App() {
           {/* Main Content */}
           <Box
             flexGrow={1}
-            ml={isDesktop ? "260px" : 0}
+            ml={isDesktop ? "220px" : 0}
             width="100%"
             sx={{
               transition: "margin-left 0.3s ease-in-out",

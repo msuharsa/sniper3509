@@ -67,7 +67,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           top: 0,
           left: 0,
           height: "100vh",
-          width: "260px",
+          width: "220px",
           overflowY: "hidden",
           zIndex: 1100,
           backgroundColor: colors.primary[400],
