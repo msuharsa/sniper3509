@@ -8,10 +8,10 @@ import {
 } from "@mui/material";
 import { tokens } from "../../theme";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
+import StoreIcon from '@mui/icons-material/Store';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import Header from "../../components/Header";
 import LineChart from "../../components/LineChart";
 import GeographyChart from "../../components/GeographyChart";
@@ -39,7 +39,7 @@ const Dashboard = () => {
         alignItems={{ xs: "flex-start", sm: "center" }}
         gap="10px"
       >
-        <Header title="DASHBOARD" subtitle="PENDATAAN SENTRA EKONOMI" />
+        <Header title="Dashboard" subtitle="Persiapan Pendataan SE2026" />
         <Button
           sx={{
             backgroundColor: colors.orangeAccent[700],
@@ -65,7 +65,7 @@ const Dashboard = () => {
         gap="20px"
       >
         {/* ROW 1 */}
-        {["Emails Sent", "Sales Obtained", "New Clients", "Traffic Received"].map(
+        {["Pasar", "Pertokoan", "Mall", "Update Profilling"].map(
           (label, i) => (
             <Box
               key={i}
@@ -82,10 +82,10 @@ const Dashboard = () => {
                 increase={["+14%", "+21%", "+5%", "+43%"][i]}
                 icon={
                   [
-                    <EmailIcon />,
-                    <PointOfSaleIcon />,
-                    <PersonAddIcon />,
-                    <TrafficIcon />,
+                    <StoreIcon />,
+                    <StorefrontIcon />,
+                    <LocalGroceryStoreIcon />,
+                    <TaskAltIcon />,
                   ][i]
                 }
               />
@@ -109,7 +109,7 @@ const Dashboard = () => {
           >
             <Box>
               <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
-                Revenue Generated
+                Progres Pendataan Menurut Kabupaten/Kota
               </Typography>
               <Typography
                 variant="h3"
@@ -143,7 +143,7 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+              Progres Pendataan Menurut Kecamatan
             </Typography>
           </Box>
         </Box>
@@ -155,7 +155,7 @@ const Dashboard = () => {
           sx={cardStyle}
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            Rata-rata Muatan per Sentra Ekonomi
           </Typography>
           <Box
             display="flex"
@@ -185,7 +185,7 @@ const Dashboard = () => {
           sx={cardStyle}
         >
           <Typography variant="h5" fontWeight="600" mb="15px">
-            Sales Quantity
+            Progres Update Profilling Menurut Kecamatan
           </Typography>
           <Box height="250px">
             <BarChart isDashboard={true} />
@@ -200,7 +200,7 @@ const Dashboard = () => {
           sx={cardStyle}
         >
           <Typography variant="h5" fontWeight="600" mb="15px">
-            Geography Based Traffic
+            Peta Sebaran Unit Usaha
           </Typography>
           <Box height="200px">
             <GeographyChart isDashboard={true} />
