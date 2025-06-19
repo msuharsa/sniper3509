@@ -42,7 +42,7 @@ const Dashboard = () => {
         <Header title="DASHBOARD" subtitle="PENDATAAN SENTRA EKONOMI" />
         <Button
           sx={{
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: colors.orangeAccent[700],
             color: colors.grey[100],
             fontSize: "14px",
             fontWeight: "bold",
@@ -53,7 +53,7 @@ const Dashboard = () => {
           }}
         >
           <DownloadOutlinedIcon sx={{ mr: 1 }} />
-          Download Reports
+          Unduh Data
         </Button>
       </Box>
 
@@ -140,7 +140,6 @@ const Dashboard = () => {
             display="flex"
             justifyContent="space-between"
             alignItems="center"
-            borderBottom={`4px solid ${colors.primary[500]}`}
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">

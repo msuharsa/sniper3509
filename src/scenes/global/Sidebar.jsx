@@ -10,7 +10,7 @@ import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
+import TableViewOutlinedIcon from '@mui/icons-material/TableViewOutlined';
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
@@ -53,11 +53,11 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             left: 12,
             zIndex: 1200,
             color: colors.grey[100],
-            backgroundColor: colors.orangeAccent[700],
+            backgroundColor: colors.orangeAccent[500],
             borderRadius: "8px",
             boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
             "&:hover": {
-              backgroundColor: colors.orangeAccent[500],
+              backgroundColor: colors.orangeAccent[700],
             },
           }}
         >
@@ -82,7 +82,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           borderRadius: "16px",
           boxShadow: "4px 0 8px rgba(0,0,0,0.2)",
           "& .pro-sidebar-inner": {
-            background: `${colors.orangeAccent[400]} !important`,
+            background: `${colors.orangeAccent[500]} !important`,
             borderRight: "none !important",
           },
           "& .pro-icon-wrapper": {
@@ -143,7 +143,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
               <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
               <Item title="Progres Pendataan Pasar" to="/bar" icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
               <Item title="Progres Matchapro" to="/pie" icon={<PieChartOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
-              <Item title="Database" to="/line" icon={<TimelineOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
+              <Item title="Database" to="/line" icon={<TableViewOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
               <Item title="Peta Sarana Ekonomi" to="/geography" icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
               <Item title="Tim dan Kontak" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
               <Item title="QnA" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
