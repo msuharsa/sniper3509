@@ -15,7 +15,7 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
 // Komponen item menu sidebar
-const Item = ({ title, to, icon, selected, setSelected }) => {
+const Item = ({ title, to, icon, selected, setSelected, setIsSidebarOpen }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -23,12 +23,15 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
     <MenuItem
       active={selected === title}
       style={{ color: colors.grey[100] }}
-      onClick={() => setSelected(title)}
       icon={icon}
-      component={Link}
-      to={to}
+      onClick={() => {
+        setSelected(title);
+        setIsSidebarOpen(false); // Tutup sidebar di mobile
+      }}
     >
-      <Typography>{title}</Typography>
+      <Link to={to} style={{ color: "inherit", textDecoration: "none", width: "100%" }}>
+        <Typography>{title}</Typography>
+      </Link>
     </MenuItem>
   );
 };
@@ -137,13 +140,13 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
 
             {/* Menu Navigasi */}
             <Box>
-              <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Progres Pendataan Pasar" to="/bar" icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Progres Matchapro" to="/pie" icon={<PieChartOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Database" to="/line" icon={<TimelineOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Peta Sarana Ekonomi" to="/geography" icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="Tim dan Kontak" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} />
-              <Item title="QnA" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} />
+              <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
+              <Item title="Progres Pendataan Pasar" to="/bar" icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
+              <Item title="Progres Matchapro" to="/pie" icon={<PieChartOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
+              <Item title="Database" to="/line" icon={<TimelineOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
+              <Item title="Peta Sarana Ekonomi" to="/geography" icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
+              <Item title="Tim dan Kontak" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
+              <Item title="QnA" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
             </Box>
           </Menu>
         </ProSidebar>
