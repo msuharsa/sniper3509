@@ -7,7 +7,6 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { tokens } from "../../theme";
-import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
@@ -148,37 +147,7 @@ const Dashboard = () => {
               Recent Transactions
             </Typography>
           </Box>
-          {mockTransactions.map((tx, i) => (
-            <Box
-              key={i}
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              borderBottom={`1px solid ${colors.primary[500]}`}
-              p="15px"
-            >
-              <Box>
-                <Typography
-                  color={colors.greenAccent[500]}
-                  variant="h5"
-                  fontWeight="600"
-                >
-                  {tx.txId}
-                </Typography>
-                <Typography color={colors.grey[100]}>{tx.user}</Typography>
-              </Box>
-              <Typography color={colors.grey[100]}>{tx.date}</Typography>
-              <Box
-                backgroundColor={colors.greenAccent[500]}
-                p="5px 10px"
-                borderRadius="4px"
-              >
-                ${tx.cost}
-              </Box>
-            </Box>
-          ))}
         </Box>
-
         {/* ROW 3 - Campaign */}
         <Box
           gridColumn={{ xs: "span 12", sm: "span 4" }}

@@ -8,14 +8,12 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
-  const isMobile = useMediaQuery("(max-width:768px)");
-
+ 
   const placeholderColor =
     theme.palette.mode === "dark" ? colors.grey[300] : colors.grey[700];
 
@@ -31,7 +29,6 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       height="60px"
       sx={{
         backdropFilter: "blur(6px)", // efek glass
-        borderBottom: `1px solid ${colors.primary[500]}`,
       }}
     >
       {/* Kiri: Tombol Menu (mobile) + Search */}
