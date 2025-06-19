@@ -13,6 +13,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TableViewOutlinedIcon from '@mui/icons-material/TableViewOutlined';
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import ModeOfTravelIcon from '@mui/icons-material/ModeOfTravel';
 
 // Komponen item menu sidebar
 const Item = ({ title, to, icon, selected, setSelected, setIsSidebarOpen }) => {
@@ -145,8 +146,8 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
               <Item title="Progres Matchapro" to="/pie" icon={<PieChartOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
               <Item title="Database" to="/line" icon={<TableViewOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
               <Item title="Peta Sarana Ekonomi" to="/geography" icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
-              <Item title="Tim dan Kontak" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
-              <Item title="QnA" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
+              <Item title="Wilkerstat" icon={<ModeOfTravelIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
+              <Item title="Tim dan Kontak" to="/team" icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />              <Item title="QnA" to="/faq" icon={<HelpOutlineOutlinedIcon />} selected={selected} setSelected={setSelected} setIsSidebarOpen={setIsSidebarOpen} />
             </Box>
           </Menu>
         </ProSidebar>
