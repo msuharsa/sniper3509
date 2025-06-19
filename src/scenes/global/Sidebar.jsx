@@ -4,6 +4,7 @@ import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
+
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
@@ -17,13 +18,14 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   return (
     <MenuItem
       active={selected === title}
       style={{ color: colors.grey[100] }}
       onClick={() => setSelected(title)}
       icon={icon}
-      component={<Link to={to} />}
+      routerLink={<Link to={to} />}
     >
       <Typography>{title}</Typography>
     </MenuItem>
@@ -73,10 +75,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           backgroundColor: colors.orangeAccent[400],
           transform: isSidebarOpen ? "translateX(0)" : "translateX(calc(-100% - 12px))",
           transition: "transform 0.3s ease-in-out",
-          borderTopLeftRadius: "16px",
-          borderTopRightRadius: "16px",
-          borderBottomLeftRadius: "16px",
-          borderBottomRightRadius: "16px",
+          borderRadius: "16px",
           boxShadow: "4px 0 8px rgba(0,0,0,0.2)",
           "& .pro-sidebar-inner": {
             background: `${colors.orangeAccent[400]} !important`,
@@ -98,6 +97,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       >
         <ProSidebar>
           <Menu iconShape="square">
+            {/* Header Sidebar */}
             <MenuItem
               onClick={() => setIsSidebarOpen(false)}
               icon={<MenuOutlinedIcon />}
@@ -108,6 +108,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
               </Typography>
             </MenuItem>
 
+            {/* Logo dan Deskripsi */}
             <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
@@ -133,6 +134,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
               </Box>
             </Box>
 
+            {/* Menu Navigasi */}
             <Box>
               <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
               <Item title="Progres Pendataan Pasar" to="/bar" icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
@@ -146,7 +148,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         </ProSidebar>
       </Box>
 
-      {/* Overlay */}
+      {/* Overlay saat sidebar terbuka */}
       {isSidebarOpen && (
         <Box
           onClick={() => setIsSidebarOpen(false)}
