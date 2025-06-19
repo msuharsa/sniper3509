@@ -70,7 +70,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           maxWidth: "100vw",
           overflowY: "hidden",
           zIndex: 1100,
-          backgroundColor: colors.primary[400],
+          backgroundColor: colors.orangeAccent[400],
           transform: isSidebarOpen ? "translateX(0)" : "translateX(calc(-100% - 12px))",
           transition: "transform 0.3s ease-in-out",
           borderTopLeftRadius: "16px",
@@ -79,7 +79,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           borderBottomRightRadius: "16px",
           boxShadow: "4px 0 8px rgba(0,0,0,0.2)",
           "& .pro-sidebar-inner": {
-            background: `${colors.primary[400]} !important`,
+            background: `${colors.orangeAccent[400]} !important`,
             borderRight: "none !important",
           },
           "& .pro-icon-wrapper": {
@@ -114,7 +114,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
                   alt="SNIPER3509"
                   width="100px"
                   height="100px"
-                  src="../../assets/Logo_Sniper.png"
+                  src="../../assets/Logo_Sniper1.png"
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
