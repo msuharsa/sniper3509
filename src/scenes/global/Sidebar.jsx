@@ -25,7 +25,8 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       style={{ color: colors.grey[100] }}
       onClick={() => setSelected(title)}
       icon={icon}
-      routerLink={<Link to={to} />}
+      component={Link}
+      to={to}
     >
       <Typography>{title}</Typography>
     </MenuItem>
@@ -49,11 +50,11 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             left: 12,
             zIndex: 1200,
             color: colors.grey[100],
-            backgroundColor: colors.blueAccent[600],
+            backgroundColor: colors.orangeAccent[700],
             borderRadius: "8px",
             boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
             "&:hover": {
-              backgroundColor: colors.primary[500],
+              backgroundColor: colors.orangeAccent[500],
             },
           }}
         >
@@ -72,7 +73,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           maxWidth: "100vw",
           overflowY: "hidden",
           zIndex: 1100,
-          backgroundColor: colors.orangeAccent[400],
+          backgroundColor: colors.orangeAccent[700],
           transform: isSidebarOpen ? "translateX(0)" : "translateX(calc(-100% - 12px))",
           transition: "transform 0.3s ease-in-out",
           borderRadius: "16px",
@@ -88,10 +89,10 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             padding: "5px 35px 5px 20px !important",
           },
           "& .pro-inner-item:hover": {
-            color: "#868dfb !important",
+            color: "#ffff00 !important",
           },
           "& .pro-menu-item.active": {
-            color: "#6870fa !important",
+            color: "#eee600 !important",
           },
         }}
       >
