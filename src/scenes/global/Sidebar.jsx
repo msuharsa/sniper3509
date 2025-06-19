@@ -54,11 +54,11 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             left: 12,
             zIndex: 1200,
             color: colors.grey[100],
-            backgroundColor: colors.orangeAccent[500],
+            backgroundColor: "#3e4396",
             borderRadius: "8px",
             boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3)",
             "&:hover": {
-              backgroundColor: colors.orangeAccent[700],
+              backgroundColor: "#535ac8",
             },
           }}
         >
@@ -77,13 +77,13 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           maxWidth: "100vw",
           overflowY: "hidden",
           zIndex: 1100,
-          backgroundColor: colors.orangeAccent[600],
+          backgroundColor: "#535ac8",
           transform: isSidebarOpen ? "translateX(0)" : "translateX(calc(-100% - 12px))",
           transition: "transform 0.3s ease-in-out",
           borderRadius: "16px",
           boxShadow: "4px 0 8px rgba(0,0,0,0.2)",
           "& .pro-sidebar-inner": {
-            background: `${colors.orangeAccent[800]} !important`,
+            background: "#535ac8 !important",
             borderRight: "none !important",
           },
           "& .pro-icon-wrapper": {

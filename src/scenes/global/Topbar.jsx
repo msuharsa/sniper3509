@@ -33,7 +33,7 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         <Box
           display="flex"
           alignItems="center"
-          backgroundColor={colors.orangeAccent[200]}
+          backgroundColor={colors.primary[500]}
           borderRadius="12px"
           overflow="hidden"
           flex={1}
@@ -56,10 +56,10 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             sx={{
               p: 1.2,
               borderRadius: 0,
-              backgroundColor: colors.orangeAccent[700],
+              backgroundColor: "#3e4396",
               color: colors.grey[100],
               "&:hover": {
-                backgroundColor: colors.orangeAccent[500],
+                backgroundColor: "#535ac8",
               },
             }}
           >
