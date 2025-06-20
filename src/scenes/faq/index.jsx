@@ -22,36 +22,33 @@ const FAQ = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            <br>Sensus Ekonomi (SE) adalah kegiatan pendataan yang dilakukan secara menyeluruh 
-            terhadap seluruh pelaku usaha di Indonesia, baik yang berbadan hukum maupun tidak, 
-            dengan tujuan untuk memperoleh data dasar seluruh kegiatan ekonomi nonpertanian.
-            </br>
-
-            <br>SE merupakan salah satu program statistik nasional yang dilaksanakan 
-            setiap 10 tahun sekali (tahun berakhiran "6", seperti 2006, 2016, dan 2026), dan 
-            bertujuan untuk:
-            </br>
-            <br>• Menyediakan gambaran lengkap struktur ekonomi Indonesia di luar sektor pertanian;</br>
-            <br>• Menyediakan informasi dasar yang komprehensif sebagai landasan perumusan kebijakan 
-            dan perencanaan pembangunan, baik nasional maupun daerah;</br>
-            <br>• Menyusun kerangka sampel untuk survei ekonomi lanjutan.</br>
-
-            <br>Ruang Lingkup SE mencakup seluruh kegiatan usaha di sektor:</br>
-            <br>• Perdagangan</br>
-            <br>• Jasa</br>
-            <br>• Industri pengolahan</br>
-            <br>• Konstruksi</br>
-            <br>• Transportasi</br>
-            <br>• Akomodasi</br>
-            <br>• Keuangan,</br> 
-            <br>• Real estat, dan sektor lain di luar pertanian.</br>
-
-            <br>Tidak mencakup sektor pertanian, karena sektor ini dicakup dalam Sensus Pertanian (ST).</br>
-
-            <br>Contoh Tujuan Praktis SE:</br>
-            <br>• Mengetahui jumlah, sebaran, dan karakteristik usaha mikro, kecil, menengah, hingga besar.</br>
-            <br>• Menyediakan data untuk perhitungan Produk Domestik Bruto (PDB)) regional.</br>
-            <br>• Mendukung kebijakan pemberdayaan UMKM.</br>
+            Sensus Ekonomi (SE) adalah kegiatan pendataan yang dilakukan secara menyeluruh terhadap seluruh pelaku usaha di Indonesia, baik yang berbadan hukum maupun tidak, dengan tujuan untuk memperoleh data dasar seluruh kegiatan ekonomi nonpertanian.
+            <br /><br />
+            SE merupakan salah satu program statistik nasional yang dilaksanakan setiap 10 tahun sekali (tahun berakhiran "6", seperti 2006, 2016, dan 2026), dan bertujuan untuk:
+            <ul>
+              <li>Menyediakan gambaran lengkap struktur ekonomi Indonesia di luar sektor pertanian;</li>
+              <li>Menyediakan informasi dasar yang komprehensif sebagai landasan perumusan kebijakan dan perencanaan pembangunan;</li>
+              <li>Menyusun kerangka sampel untuk survei ekonomi lanjutan.</li>
+            </ul>
+            Ruang lingkup SE mencakup seluruh kegiatan usaha di sektor:
+            <ul>
+              <li>Perdagangan</li>
+              <li>Jasa</li>
+              <li>Industri pengolahan</li>
+              <li>Konstruksi</li>
+              <li>Transportasi</li>
+              <li>Akomodasi</li>
+              <li>Keuangan</li>
+              <li>Real estat, dan sektor lain di luar pertanian.</li>
+            </ul>
+            Tidak mencakup sektor pertanian, karena sektor ini dicakup dalam Sensus Pertanian (ST).
+            <br /><br />
+            Contoh Tujuan Praktis SE:
+            <ul>
+              <li>Mengetahui jumlah, sebaran, dan karakteristik usaha mikro, kecil, menengah, hingga besar.</li>
+              <li>Menyediakan data untuk perhitungan Produk Domestik Bruto (PDB) regional.</li>
+              <li>Mendukung kebijakan pemberdayaan UMKM.</li>
+            </ul>
           </Typography>
         </AccordionDetails>
       </Accordion>
