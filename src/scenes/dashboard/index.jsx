@@ -42,7 +42,7 @@ const Dashboard = () => {
         <Header title="Dashboard" subtitle="Persiapan Pendataan SE2026" />
         <Button
           sx={{
-            backgroundColor: "#3e4396",
+            backgroundColor: colors.orangeAccent[600],
             color: colors.grey[100],
             fontSize: "14px",
             fontWeight: "bold",

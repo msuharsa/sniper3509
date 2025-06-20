@@ -56,10 +56,10 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             sx={{
               p: 1.2,
               borderRadius: 0,
-              backgroundColor: "#3e4396",
+              backgroundColor: colors.orangeAccent[600],
               color: colors.grey[100],
               "&:hover": {
-                backgroundColor: "#535ac8",
+                backgroundColor: colors.orangeAccent[500],
               },
             }}
           >
