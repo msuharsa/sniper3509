@@ -31,10 +31,10 @@ const FAQ = () => {
             setiap 10 tahun sekali (tahun berakhiran "6", seperti 2006, 2016, dan 2026), dan 
             bertujuan untuk:
             </br>
-            <br></br>• Menyediakan gambaran lengkap struktur ekonomi Indonesia di luar sektor pertanian;
-            <br></br>• Menyediakan informasi dasar yang komprehensif sebagai landasan perumusan kebijakan 
-            dan perencanaan pembangunan, baik nasional maupun daerah;
-            <br></br>• Menyusun kerangka sampel untuk survei ekonomi lanjutan.
+            <br>• Menyediakan gambaran lengkap struktur ekonomi Indonesia di luar sektor pertanian;</br>
+            <br>• Menyediakan informasi dasar yang komprehensif sebagai landasan perumusan kebijakan 
+            dan perencanaan pembangunan, baik nasional maupun daerah;</br>
+            <br>• Menyusun kerangka sampel untuk survei ekonomi lanjutan.</br>
 
             <br>Ruang Lingkup SE mencakup seluruh kegiatan usaha di sektor:</br>
             <br>• Perdagangan</br>
@@ -49,7 +49,7 @@ const FAQ = () => {
             <br>Tidak mencakup sektor pertanian, karena sektor ini dicakup dalam Sensus Pertanian (ST).</br>
 
             <br>Contoh Tujuan Praktis SE:</br>
-            <br><• Mengetahui jumlah, sebaran, dan karakteristik usaha mikro, kecil, menengah, hingga besar./br>
+            <br>• Mengetahui jumlah, sebaran, dan karakteristik usaha mikro, kecil, menengah, hingga besar.</br>
             <br>• Menyediakan data untuk perhitungan Produk Domestik Bruto (PDB)) regional.</br>
             <br>• Mendukung kebijakan pemberdayaan UMKM.</br>
           </Typography>
