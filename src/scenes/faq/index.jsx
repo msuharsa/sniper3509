@@ -22,34 +22,36 @@ const FAQ = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Sensus Ekonomi (SE) adalah kegiatan pendataan yang dilakukan secara menyeluruh 
+            <br>Sensus Ekonomi (SE) adalah kegiatan pendataan yang dilakukan secara menyeluruh 
             terhadap seluruh pelaku usaha di Indonesia, baik yang berbadan hukum maupun tidak, 
             dengan tujuan untuk memperoleh data dasar seluruh kegiatan ekonomi nonpertanian.
+            </br>
 
-            SE merupakan salah satu program statistik nasional yang dilaksanakan 
+            <br>SE merupakan salah satu program statistik nasional yang dilaksanakan 
             setiap 10 tahun sekali (tahun berakhiran "6", seperti 2006, 2016, dan 2026), dan 
             bertujuan untuk:
-            • Menyediakan gambaran lengkap struktur ekonomi Indonesia di luar sektor pertanian;
-            • Menyediakan informasi dasar yang komprehensif sebagai landasan perumusan kebijakan 
+            </br>
+            <br></br>• Menyediakan gambaran lengkap struktur ekonomi Indonesia di luar sektor pertanian;
+            <br></br>• Menyediakan informasi dasar yang komprehensif sebagai landasan perumusan kebijakan 
             dan perencanaan pembangunan, baik nasional maupun daerah;
-            • Menyusun kerangka sampel untuk survei ekonomi lanjutan.
+            <br></br>• Menyusun kerangka sampel untuk survei ekonomi lanjutan.
 
-            Ruang Lingkup SE mencakup seluruh kegiatan usaha di sektor:
-            • Perdagangan
-            • Jasa
-            • Industri pengolahan
-            • Konstruksi
-            • Transportasi
-            • Akomodasi
-            • Keuangan
-            • Real estat, dan sektor lain di luar pertanian.
+            <br>Ruang Lingkup SE mencakup seluruh kegiatan usaha di sektor:</br>
+            <br>• Perdagangan</br>
+            <br>• Jasa</br>
+            <br> Industri pengolahan</br>•
+            <br>• Konstruksi</br>
+            <br>• Transportasi</br>
+            <br>• Akomodasi</br>
+            <br>• Keuangan,</br> 
+            <br>• Real estat, dan sektor lain di luar pertanian.</br>
 
-            Tidak mencakup sektor pertanian, karena sektor ini dicakup dalam Sensus Pertanian (ST).
+            <br>Tidak mencakup sektor pertanian, karena sektor ini dicakup dalam Sensus Pertanian (ST).</br>
 
-            Contoh Tujuan Praktis SE:
-            • Mengetahui jumlah, sebaran, dan karakteristik usaha mikro, kecil, menengah, hingga besar.
-            • Menyediakan data untuk perhitungan Produk Domestik Bruto (PDB)) regional.
-            • Mendukung kebijakan pemberdayaan UMKM.
+            <br>Contoh Tujuan Praktis SE:</br>
+            <br><• Mengetahui jumlah, sebaran, dan karakteristik usaha mikro, kecil, menengah, hingga besar./br>
+            <br>• Menyediakan data untuk perhitungan Produk Domestik Bruto (PDB)) regional.</br>
+            <br>• Mendukung kebijakan pemberdayaan UMKM.</br>
           </Typography>
         </AccordionDetails>
       </Accordion>
