@@ -18,6 +18,8 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -28,6 +30,15 @@ const Dashboard = () => {
     backgroundColor: colors.primary[400],
     borderRadius: "12px",
   };
+
+  const [statData, setStatData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/dashboard")
+      .then((res) => setStatData(res.data.dashboard))
+      .catch((err) => console.error("Gagal mengambil data statbox:", err));
+  }, []);
 
   return (
     <Box m={{ xs: "10px", sm: "20px" }}>
@@ -65,33 +76,31 @@ const Dashboard = () => {
         gap="20px"
       >
         {/* ROW 1 */}
-        {["Pasar", "Pertokoan", "Mall", "Update Profilling"].map(
-          (label, i) => (
-            <Box
-              key={i}
-              gridColumn={{ xs: "span 12", sm: "span 3" }}
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              sx={cardStyle}
-            >
-              <StatBox
-                title={["12,361", "431,225", "32,441", "1,325,134"][i]}
-                subtitle={label}
-                progress={["0.75", "0.50", "0.30", "0.80"][i]}
-                increase={["+14%", "+21%", "+5%", "+43%"][i]}
-                icon={
-                  [
-                    <StoreIcon />,
-                    <StorefrontIcon />,
-                    <LocalGroceryStoreIcon />,
-                    <TaskAltIcon />,
-                  ][i]
-                }
-              />
-            </Box>
-          )
-        )}
+        {statData.map((item, i) => (
+          <Box
+            key={i}
+            gridColumn={{ xs: "span 12", sm: "span 3" }}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            sx={cardStyle}
+          >
+            <StatBox
+              title={parseInt(item.value).toLocaleString("id-ID")}
+              subtitle={item.label}
+              progress={item.progress}
+              increase={item.increase}
+              icon={
+                {
+                  store: <StoreIcon />,
+                  storefront: <StorefrontIcon />,
+                  localGroceryStore: <LocalGroceryStoreIcon />,
+                  taskAlt: <TaskAltIcon />,
+                }[item.icon] || <StoreIcon />
+              }
+            />
+          </Box>
+        ))}
 
         {/* ROW 2 - Line Chart */}
         <Box

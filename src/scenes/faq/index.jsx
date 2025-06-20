@@ -74,7 +74,6 @@ const FAQ = () => {
               </ul>
               <li>Hasil: Daftar lengkap unit usaha yang akan menjadi dasar untuk survei lanjutan.</li>
             </ul>
-            <br /><br />
             2. Pencacahan Lengkap Usaha Menengah dan Besar (UMB)
             <ul>
               <li>Waktu pelaksanaan: Tahun 2027 (setelah tahap pertama selesai dan dianalisis)</li>
@@ -124,14 +123,12 @@ const FAQ = () => {
               <li>Nama, alamat, nomor telepon, email, dan</li>
               <li>Kategori usaha dan KBLI (Klasifikasi Baku Lapangan Usaha Indonesia) serta lainnya</li>
             </ul>
-            <br /><br />
             Tujuan profilling matchapro:
             <ul>
               <li>Menghadirkan kerangka sampel usaha terbaru dan akurat bagi survei ekonomi dan Sensus Ekonomi 2026.</li>
               <li>Memperbaiki akurasi dan kecepatan dalam pengumpulan data usaha dari desk-based profiling hingga verifikasi lapangan.</li>
               <li>Mengisi dan memperbaharui data dalam SBR, sehingga menjadi sumber utama untuk demografi bisnis dan perencanaan ekonomi.</li>
             </ul>
-            <br /><br />
             Hubungan dengan SE2026:
             <ul>
               <li>MatchaPro digunakan untuk memperbarui SBR sebelum Sensus Ekonomi 2026 diselenggarakan, sehingga semua usaha tersusun dalam kerangka sampel yang tepat dan up‑to‑date,</li>
@@ -155,7 +152,6 @@ const FAQ = () => {
               <li>Kerangka geospasial — peta batas wilayah kerja yang digunakan petugas di lapangan, termasuk geotagging lokasi usaha.</li>
               <li>Muatan Wilkerstat — daftar unit usaha (termasuk pedagang di pasar, sentra ekonomi) berdasarkan data terbaru.</li>
             </ul>
-            <br /><br />
             Tahapan Pelaksanaan
             <ul>
               <li>Persiapan & Training</li>
@@ -174,8 +170,7 @@ const FAQ = () => {
                 <li>Pengecekan dan sinkronisasi dilakukan untuk menjamin data terbaru dan akurat sesuai kerangka Wilkerstat.</li>
               </ul>
             </ul>
-              Tujuan Utama
-            <br /><br />
+            Tujuan Utama
             <ul>
               <li>Standarisasi wilayah kerja petugas selama SE2026 sehingga tidak ada tumpang tindih atau kekurangan cakupan.</li>
               <li>Pembuatan daftar kontak dan lokasi usaha yang lengkap sebagai dasar pelaksanaan pencacahan.</li>
