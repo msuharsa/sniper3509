@@ -60,8 +60,47 @@ const FAQ = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Sensus Ekonomi 2026 (SE2026) akan dilaksanakan dalam dua tahap utama, yaitu:
+            <br /><br />
+            Tahapan Pelaksanaan SE2026:
+            <br /><br />
+            1. Pendataan Lengkap (Listing) Usaha
+            <ul>
+              <li>Waktu pelaksanaan: Mei–Juni 2026</li>
+              <li>Tujuan:</li>
+              <ul>
+                <li>Mencatat semua pelaku usaha, baik formal maupun informal, di seluruh Indonesia.</li>
+                <li>Mengetahui lokasi dan keberadaan usaha secara menyeluruh.</li>
+              </ul>
+              <li>Hasil: Daftar lengkap unit usaha yang akan menjadi dasar untuk survei lanjutan.</li>
+            </ul>
+            <br /><br />
+            2. Pencacahan Lengkap Usaha Menengah dan Besar (UMB)
+            <ul>
+              <li>Waktu pelaksanaan: Tahun 2027 (setelah tahap pertama selesai dan dianalisis)</li>
+              <li>Tujuan:</li>
+              <ul>
+                <li>Mengumpulkan data rinci dari usaha menengah dan besar yang sudah terdaftar di tahap listing.</li>
+                <li>Memberikan informasi statistik yang lebih dalam mengenai struktur dan kinerja ekonomi nasional.</li>
+              </ul>
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </Typography>
         </AccordionDetails>
       </Accordion>
