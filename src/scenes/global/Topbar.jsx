@@ -33,7 +33,7 @@ const Topbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
         <Box
           display="flex"
           alignItems="center"
-          backgroundColor={colors.primary[500]}
+          backgroundColor={colors.primary[400]}
           borderRadius="12px"
           overflow="hidden"
           flex={1}
