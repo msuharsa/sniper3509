@@ -20,6 +20,7 @@ import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import DynamicCircle from "../../components/DynamicCircle";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -93,9 +94,15 @@ const Dashboard = () => {
             sx={cardStyle}
           >
           <StatBox
-            title={item.value.toString().trim()}
+            title={item.value.trim()}
             subtitle={item.label}
-            progress={item.progress}
+            progress={
+              <DynamicCircle
+                percent={Number(item.increase.replace("%", "").replace(/\+/g, "").trim())}
+                size={isMobile ? 60 : 80}
+                thickness={5}
+              />
+            }
             increase={item.increase}
             icon={
               {
@@ -103,7 +110,7 @@ const Dashboard = () => {
                 storefront: <StorefrontIcon />,
                 localGroceryStore: <LocalGroceryStoreIcon />,
                 taskAlt: <TaskAltIcon />,
-              }[item.icon?.trim()] || <StoreIcon />
+              }[item.icon?.trim().toLowerCase()] || <StoreIcon />
             }
           />
           </Box>
