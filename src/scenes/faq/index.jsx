@@ -84,23 +84,6 @@ const FAQ = () => {
                 <li>Memberikan informasi statistik yang lebih dalam mengenai struktur dan kinerja ekonomi nasional.</li>
               </ul>
             </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -112,8 +95,14 @@ const FAQ = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Pendataan sentra ekonomi merupakan bagian dari upaya pendataan usaha menjelang Sensus Ekonomi 2026. Kegiatan ini difokuskan pada identifikasi usaha di pusat ekonomi lokal, seperti pasar tradisional, pertokoann, mall maupun pusat kegiatan ekonomi lainnya.
+            <br /><br />
+            Tujuan Utama:
+            <ul>
+              <li>Membangun daftar lengkap usaha di titik-titik ekonomi lokal sebelum sensus utama.</li>
+              <li>Menyajikan peta dan karakteristik usaha di sentra ekonomi untuk keperluan perencanaan dan kebijakan ekonomi daerah</li>
+              <li>Mempersiapkan kerangka sampling agar Sensus Ekonomi 2026 dapat dilakukan lebih efektif dan komprehensif.</li>
+            </ul>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -125,9 +114,30 @@ const FAQ = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+            Profiling MatchaPro adalah bagian dari proses profiling Statistical Business Register (SBR). 
+            <br /><br />
+            MatchaPro adalah singkatan dari Matching Assessment Profiling, sebuah aplikasi digital yang dikembangkan BPS untuk membantu proses pemutakhiran data usaha/perusahaan dalam SBR.
+            <br /><br />
+            Dengan menggunakan MatchaPro, petugas BPS dapat memperbarui berbagai informasi usaha seperti:
+            <ul>
+              <li>Status keberadaan,</li>
+              <li>Nama, alamat, nomor telepon, email, dan</li>
+              <li>Kategori usaha dan KBLI (Klasifikasi Baku Lapangan Usaha Indonesia) serta lainnya</li>
+            </ul>
+            <br /><br />
+            Tujuan profilling matchapro:
+            <ul>
+              <li>Menghadirkan kerangka sampel usaha terbaru dan akurat bagi survei ekonomi dan Sensus Ekonomi 2026.</li>
+              <li>Memperbaiki akurasi dan kecepatan dalam pengumpulan data usaha dari desk-based profiling hingga verifikasi lapangan.</li>
+              <li>Mengisi dan memperbaharui data dalam SBR, sehingga menjadi sumber utama untuk demografi bisnis dan perencanaan ekonomi.</li>
+            </ul>
+            <br /><br />
+            Hubungan dengan SE2026:
+            <ul>
+              <li>MatchaPro digunakan untuk memperbarui SBR sebelum Sensus Ekonomi 2026 diselenggarakan, sehingga semua usaha tersusun dalam kerangka sampel yang tepat dan up‑to‑date,</li>
+              <li>Data yang terkumpul akan menjadi dasar penting dalam tahap listing dan pencacahan unit usaha selama SE2026.</li>
+            </ul>
+         </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded>
@@ -138,8 +148,39 @@ const FAQ = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Wilkerstat adalah singkatan dari Kerangka Wilayah Kerja Statistik, yakni pembagian wilayah kerja petugas BPS yang mencakup area geospasial dan unit usaha yang akan dicatat selama SE2026.
+            <br /><br />
+            Updating Wilkerstat adalah proses penting untuk memperbarui:
+            <ul>
+              <li>Kerangka geospasial — peta batas wilayah kerja yang digunakan petugas di lapangan, termasuk geotagging lokasi usaha.</li>
+              <li>Muatan Wilkerstat — daftar unit usaha (termasuk pedagang di pasar, sentra ekonomi) berdasarkan data terbaru.</li>
+            </ul>
+            <br /><br />
+            Tahapan Pelaksanaan
+            <ul>
+              <li>Persiapan & Training</li>
+              <ul>
+                <li>Tingkat nasional dan provinsi diadakan pelatihan calon instruktur Wilkerstat (rekap Sejak Mei 2025).</li>
+                <li>Peserta meliputi pengelola sistem informasi, teknisi geospasial, dan calon instruktur lapangan.</li>
+              </ul>
+              <li>Pengumpulan Data Lapangan</li>
+              <ul>
+                <li>Petugas menggali data geotagging, foto lokasi, serta karakteristik usaha menggunakan aplikasi Wilkerstat.</li>
+                <li>Fokus pada unit usaha, sentra ekonomi, pasar, dan infrastruktur terkait.</li>
+              </ul>
+              <li>Pemutakhiran Data dan Pengolahan</li>
+              <ul>
+                <li>Data dikoleksi dari semua wilayah, kemudian diproses secara desk-based di tingkat kabupaten/provinsi.</li>
+                <li>Pengecekan dan sinkronisasi dilakukan untuk menjamin data terbaru dan akurat sesuai kerangka Wilkerstat.</li>
+              </ul>
+            </ul>
+              Tujuan Utama
+            <br /><br />
+            <ul>
+              <li>Standarisasi wilayah kerja petugas selama SE2026 sehingga tidak ada tumpang tindih atau kekurangan cakupan.</li>
+              <li>Pembuatan daftar kontak dan lokasi usaha yang lengkap sebagai dasar pelaksanaan pencacahan.</li>
+              <li>Optimalisasi sampling dan kualitas data usaha nasional — wilayah dan unit usaha sudah divalidasi sebelumnya.</li>
+            </ul>
           </Typography>
         </AccordionDetails>
       </Accordion>
