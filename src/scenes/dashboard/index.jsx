@@ -40,6 +40,13 @@ const Dashboard = () => {
       .catch((err) => console.error("Gagal mengambil data statbox:", err));
   }, []);
 
+  const iconMap = {
+    Store: <StoreIcon />,
+    Storefront: <StorefrontIcon />,
+    LocalGroceryStore: <LocalGroceryStoreIcon />,
+    TaskAlt: <TaskAltIcon />,
+  };
+
   return (
     <Box m={{ xs: "10px", sm: "20px" }}>
       {/* HEADER */}
@@ -85,28 +92,20 @@ const Dashboard = () => {
             justifyContent="center"
             sx={cardStyle}
           >
-            <StatBox
-              title={
-                Number(
-                  item.value
-                    .toString()
-                    .split("/")[0]
-                    .replace(/,/g, "")
-                    .trim()
-                ).toLocaleString("id-ID")
-              }
-              subtitle={item.label}
-              progress={item.progress}
-              increase={item.increase}
-              icon={
-                {
-                  store: <StoreIcon />,
-                  storefront: <StorefrontIcon />,
-                  localGroceryStore: <LocalGroceryStoreIcon />,
-                  taskAlt: <TaskAltIcon />,
-                }[item.icon?.trim()] || <StoreIcon />
-              }
-            />
+          <StatBox
+            title={item.value.toString().trim()}
+            subtitle={item.label}
+            progress={item.progress}
+            increase={item.increase}
+            icon={
+              {
+                store: <StoreIcon />,
+                storefront: <StorefrontIcon />,
+                localGroceryStore: <LocalGroceryStoreIcon />,
+                taskAlt: <TaskAltIcon />,
+              }[item.icon?.trim()] || <StoreIcon />
+            }
+          />
           </Box>
         ))}
 
