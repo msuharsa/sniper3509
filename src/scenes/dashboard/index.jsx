@@ -20,7 +20,6 @@ import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import DynamicCircle from "../../components/DynamicCircle";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -40,13 +39,6 @@ const Dashboard = () => {
       .then((res) => setStatData(res.data.dashboard))
       .catch((err) => console.error("Gagal mengambil data statbox:", err));
   }, []);
-
-  const iconMap = {
-    Store: <StoreIcon />,
-    Storefront: <StorefrontIcon />,
-    LocalGroceryStore: <LocalGroceryStoreIcon />,
-    TaskAlt: <TaskAltIcon />,
-  };
 
   return (
     <Box m={{ xs: "10px", sm: "20px" }}>
@@ -93,26 +85,28 @@ const Dashboard = () => {
             justifyContent="center"
             sx={cardStyle}
           >
-          <StatBox
-            title={item.value.trim()}
-            subtitle={item.label}
-            progress={
-              <DynamicCircle
-                percent={Number(item.increase.replace("%", "").replace(/\+/g, "").trim())}
-                size={isMobile ? 60 : 80}
-                thickness={5}
-              />
-            }
-            increase={item.increase}
-            icon={
-              {
-                store: <StoreIcon />,
-                storefront: <StorefrontIcon />,
-                localGroceryStore: <LocalGroceryStoreIcon />,
-                taskAlt: <TaskAltIcon />,
-              }[item.icon?.trim().toLowerCase()] || <StoreIcon />
-            }
-          />
+            <StatBox
+              title={
+                Number(
+                  item.value
+                    .toString()
+                    .split("/")[0]
+                    .replace(/,/g, "")
+                    .trim()
+                ).toLocaleString("id-ID")
+              }
+              subtitle={item.label}
+              progress={item.progress}
+              increase={item.increase}
+              icon={
+                {
+                  store: <StoreIcon />,
+                  storefront: <StorefrontIcon />,
+                  localGroceryStore: <LocalGroceryStoreIcon />,
+                  taskAlt: <TaskAltIcon />,
+                }[item.icon?.trim()] || <StoreIcon />
+              }
+            />
           </Box>
         ))}
 
