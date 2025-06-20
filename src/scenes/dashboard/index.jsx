@@ -85,28 +85,20 @@ const Dashboard = () => {
             justifyContent="center"
             sx={cardStyle}
           >
-            <StatBox
-              title={
-                Number(
-                  item.value
-                    .toString()
-                    .split("/")[0]
-                    .replace(/,/g, "")
-                    .trim()
-                ).toLocaleString("id-ID")
-              }
-              subtitle={item.label}
-              progress={item.progress}
-              increase={item.increase}
-              icon={
-                {
-                  store: <StoreIcon />,
-                  storefront: <StorefrontIcon />,
-                  localGroceryStore: <LocalGroceryStoreIcon />,
-                  taskAlt: <TaskAltIcon />,
-                }[item.icon?.trim()] || <StoreIcon />
-              }
-            />
+          <StatBox
+            title={item.value.toString().trim()}
+            subtitle={item.label}
+            progress={item.progress}
+            increase={item.increase}
+            icon={
+              {
+                store: <StoreIcon />,
+                storefront: <StorefrontIcon />,
+                localGroceryStore: <LocalGroceryStoreIcon />,
+                taskAlt: <TaskAltIcon />,
+              }[item.icon?.trim()] || <StoreIcon />
+            }
+          />
           </Box>
         ))}
 
