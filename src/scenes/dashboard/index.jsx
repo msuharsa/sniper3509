@@ -92,10 +92,10 @@ const Dashboard = () => {
               increase={item.increase}
               icon={
                 {
-                  store: <StoreIcon />,
-                  storefront: <StorefrontIcon />,
-                  localGroceryStore: <LocalGroceryStoreIcon />,
-                  taskAlt: <TaskAltIcon />,
+                  Store: <StoreIcon />,
+                  Storefront: <StorefrontIcon />,
+                  LocalGroceryStore: <LocalGroceryStoreIcon />,
+                  TaskAlt: <TaskAltIcon />,
                 }[item.icon] || <StoreIcon />
               }
             />
