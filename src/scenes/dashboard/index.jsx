@@ -40,6 +40,13 @@ const Dashboard = () => {
       .catch((err) => console.error("Gagal mengambil data statbox:", err));
   }, []);
 
+  const iconMap = {
+    Store: <StoreIcon />,
+    Storefront: <StorefrontIcon />,
+    LocalGroceryStore: <LocalGroceryStoreIcon />,
+    TaskAlt: <TaskAltIcon />,
+  };
+
   return (
     <Box m={{ xs: "10px", sm: "20px" }}>
       {/* HEADER */}
