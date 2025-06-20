@@ -39,7 +39,7 @@ const FAQ = () => {
             <br>Ruang Lingkup SE mencakup seluruh kegiatan usaha di sektor:</br>
             <br>• Perdagangan</br>
             <br>• Jasa</br>
-            <br> Industri pengolahan</br>•
+            <br>• Industri pengolahan</br>
             <br>• Konstruksi</br>
             <br>• Transportasi</br>
             <br>• Akomodasi</br>
