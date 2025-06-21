@@ -117,7 +117,7 @@ const Dashboard = () => {
           </Box>
         ))}
 
-        {/* ROW 2 - Line Chart */}
+        {/* ROW 2 - Bar Chart */}
         <Box
           gridColumn={{ xs: "span 12", sm: "span 6" }}
           gridRow="span 2"
@@ -135,26 +135,14 @@ const Dashboard = () => {
               <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
                 Progres Pendataan Menurut Kabupaten/Kota
               </Typography>
-              <Typography
-                variant="h3"
-                fontWeight="bold"
-                color={colors.greenAccent[500]}
-              >
-                $59,342.32
-              </Typography>
             </Box>
-            <IconButton>
-              <DownloadOutlinedIcon
-                sx={{ fontSize: 26, color: colors.greenAccent[500] }}
-              />
-            </IconButton>
           </Box>
           <Box height="250px" mt="-20px">
-            <LineChart isDashboard={true} />
+            <BarChart isDashboard={true} />
           </Box>
         </Box>
 
-        {/* ROW 2 - Transactions */}
+        {/* ROW 2 - Bar Chart */}
         <Box
           gridColumn={{ xs: "span 12", sm: "span 6" }}
           gridRow="span 2"
@@ -169,6 +157,9 @@ const Dashboard = () => {
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
               Progres Pendataan Menurut Kecamatan
             </Typography>
+          </Box>
+          <Box height="250px" mt="-20px">
+            <BarChart isDashboard={true} />
           </Box>
         </Box>
         {/* ROW 3 - Campaign */}
