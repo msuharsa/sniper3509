@@ -31,12 +31,20 @@ const Dashboard = () => {
     borderRadius: "12px",
   };
 
-  const [statData, setStatData] = useState([]);
+  const [statDashboard, setStatDashboard] = useState([]);
+  const [statKab, setStatKab] = useState([]);
 
   useEffect(() => {
     axios
       .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/dashboard")
-      .then((res) => setStatData(res.data.dashboard))
+      .then((res) => setStatDashboard(res.data.dashboard))
+      .catch((err) => console.error("Gagal mengambil data statbox:", err));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
+      .then((res) => setStatKab(res.data.rekapKab))
       .catch((err) => console.error("Gagal mengambil data statbox:", err));
   }, []);
 
@@ -83,7 +91,7 @@ const Dashboard = () => {
         gap="20px"
       >
         {/* ROW 1 */}
-        {statData.map((item, i) => (
+        {statDashboard.map((item, i) => (
           <Box
             key={i}
             gridColumn={{ xs: "span 12", sm: "span 3" }}
