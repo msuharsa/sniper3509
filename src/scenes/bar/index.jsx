@@ -7,7 +7,7 @@ const Bar = () => {
     <Box m="20px">
       <Header title="Progres Pendataan" subtitle="Sentra Ekonomi" />
       <Box height="75vh">
-        <BarChart />
+        <BarChart data={filteredData} isDashboard={false} />
       </Box>
     </Box>
   );
