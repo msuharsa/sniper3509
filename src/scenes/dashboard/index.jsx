@@ -119,7 +119,7 @@ const Dashboard = () => {
 
         {/* ROW 2 - Line Chart */}
         <Box
-          gridColumn={{ xs: "span 12", sm: "span 8" }}
+          gridColumn={{ xs: "span 12", sm: "span 6" }}
           gridRow="span 2"
           sx={cardStyle}
         >
@@ -156,7 +156,7 @@ const Dashboard = () => {
 
         {/* ROW 2 - Transactions */}
         <Box
-          gridColumn={{ xs: "span 12", sm: "span 4" }}
+          gridColumn={{ xs: "span 12", sm: "span 6" }}
           gridRow="span 2"
           sx={{ ...cardStyle, overflow: "auto" }}
         >
