@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  IconButton,
   Typography,
   useTheme,
   useMediaQuery,
@@ -13,7 +12,6 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import Header from "../../components/Header";
-import LineChart from "../../components/LineChart";
 import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
@@ -32,19 +30,11 @@ const Dashboard = () => {
   };
 
   const [statDashboard, setStatDashboard] = useState([]);
-  const [statKab, setStatKab] = useState([]);
-
+  
   useEffect(() => {
     axios
       .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/dashboard")
       .then((res) => setStatDashboard(res.data.dashboard))
-      .catch((err) => console.error("Gagal mengambil data statbox:", err));
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
-      .then((res) => setStatKab(res.data.rekapKab))
       .catch((err) => console.error("Gagal mengambil data statbox:", err));
   }, []);
 
