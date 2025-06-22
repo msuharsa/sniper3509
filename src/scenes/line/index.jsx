@@ -22,13 +22,13 @@ const LineChart = () => {
     >
       <Box
         gridColumn={{ xs: "span 12", sm: "span 6" }}
-        gridRow="span 5"
+        gridRow="span 4"
         sx={cardStyle}
       >
         <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
           Rekap Kabupaten/Kota
         </Typography>
-        <Box>
+        <Box height="500px">
           <BarChartCustom
             apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
             indexField="kodeKab"
@@ -47,9 +47,9 @@ const LineChart = () => {
         }}
       >
         <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
-          📊 Rekap Kecamatan
+          Rekap Kecamatan
         </Typography>
-        <Box>
+        <Box height="500px">
           <BarChartCustom
             apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
             indexField="namaKecamatan"
