@@ -47,18 +47,8 @@ const BarChart = ({ isDashboard = false }) => {
       indexScale={{ type: "band", round: true }}
       colors={({ data }) => data.color}
       borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-      axisBottom={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: -45,
-        legend: isDashboard ? undefined : "PersenSentra",
-        legendPosition: "middle",
-        legendOffset: 60,
       }}
       axisLeft={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
         legend: "Kode Kabupaten/Kota",
         legendPosition: "middle",
         legendOffset: -50,
