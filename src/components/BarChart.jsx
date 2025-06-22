@@ -30,79 +30,75 @@ const BarChart = ({ isDashboard = false }) => {
     return {
       kab: namaKab,
       PersenSentra: persen,
-      color: isJember ? "#facc15" : colors.greenAccent[600],
+      color: isJember ? colors.orangeAccent[500] : colors.orangeAccent[600],
       isJember: isJember,
     };
   });
 
   return (
-    <div style={{
-      maxHeight: '600px',
-      overflowY: 'auto',
-      scrollbarWidth: 'none',
-      msOverflowStyle: 'none'
-    }}>
-      <ResponsiveBar
-        layout="horizontal" // ✅ buat horizontal
-        data={barData}
-        keys={["PersenSentra"]}
-        indexBy="kab"
-        margin={{ top: 50, right: 50, bottom: 60, left: 150 }}
-        padding={0.3}
-        valueScale={{ type: "linear" }}
-        indexScale={{ type: "band", round: true }}
-        colors={({ data }) => data.color}
-        borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-        axisBottom={{
-          tickSize: 5,
-          tickPadding: 5,
-          tickRotation: 0,
-          legend: "persenSentra",
-          legendPosition: "middle",
-          legendOffset: 40,
-        }}
-        axisLeft={{
-          tickSize: 5,
-          tickPadding: 5,
-          tickRotation: 0,
-          legend: isDashboard ? undefined : "kabupaten/kota",
-          legendPosition: "middle",
-          legendOffset: -100,
-        }}
-        label={(d) => `${d.value.toFixed(1)}%`}
-        labelTextColor={(d) => d.data.isJember ? "#000" : "#fff"}
-        labelSkipWidth={12}
-        labelSkipHeight={12}
-        animate={true}
-        motionStiffness={90}
-        motionDamping={15}
-        theme={{
-          axis: {
-            ticks: {
-              text: {
-                fill: colors.grey[100],
-              },
-            },
-            legend: {
-              text: {
-                fill: colors.grey[100],
-              },
-            },
-          },
-          legends: {
+    <ResponsiveBar
+      data={barData}
+      keys={["PersenSentra"]}
+      indexBy="kab"
+      margin={{ top: 50, right: 130, bottom: 80, left: 60 }}
+      padding={0.3}
+      valueScale={{ type: "linear" }}
+      indexScale={{ type: "band", round: true }}
+      colors={({ data }) => data.color}
+      borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
+      axisBottom={{
+        tickSize: 5,
+        tickPadding: 5,
+        tickRotation: -45,
+        legend: isDashboard ? undefined : "kabupaten/kota",
+        legendPosition: "middle",
+        legendOffset: 60,
+      }}
+      axisLeft={{
+        tickSize: 5,
+        tickPadding: 5,
+        tickRotation: 0,
+        legend: "PersenSentra",
+        legendPosition: "middle",
+        legendOffset: -50,
+      }}
+      labelTextColor={(d) =>
+        d.data.isJember ? "#fff" : "#000"
+      }
+      label={({ value, data }) => 
+        data.isJember ? `${value.toFixed(1)}%` : `${value.toFixed(1)}%`
+      }
+      labelSkipHeight={12}
+      labelSkipWidth={16}
+      animate={true}
+      motionStiffness={90}
+      motionDamping={15}
+      theme={{
+        axis: {
+          ticks: {
             text: {
               fill: colors.grey[100],
             },
           },
-          tooltip: {
-            container: {
-              background: colors.primary[500],
-              color: "#ffffff",
+          legend: {
+            text: {
+              fill: colors.grey[100],
             },
           },
-        }}
-      />
-    </div>
+        },
+        legends: {
+          text: {
+            fill: colors.grey[100],
+          },
+        },
+        tooltip: {
+          container: {
+            background: colors.primary[500],
+            color: "#ffffff",
+          },
+        },
+      }}
+    />
   );
 };
 
