@@ -24,7 +24,7 @@ const BarChart = ({ isDashboard = false }) => {
         </text>
       );
     });
-    
+
   useEffect(() => {
     axios
       .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
@@ -69,6 +69,7 @@ const BarChart = ({ isDashboard = false }) => {
         legendOffset: -50,
       }}
       axisBottom={null}
+      enableLabel={false}
       enableGridX={false}
       enableGridY={false}
       labelTextColor={(d) =>
