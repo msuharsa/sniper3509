@@ -23,7 +23,7 @@ const BarChart = ({ isDashboard = false }) => {
 
 
   const barData = statKab.map((item) => {
-    const namaKab = item.kode] || "UNKNOWN";
+    const namaKab = item.kode || "UNKNOWN";
     const persen = parseFloat(item.persenSentra) || 0;
     const isJember = namaKab.includes("[3509]");
 
