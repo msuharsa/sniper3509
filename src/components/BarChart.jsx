@@ -57,7 +57,7 @@ const BarChart = ({ isDashboard = false }) => {
       data={barData}
       keys={["PersenSentra"]}
       indexBy="kab"
-      margin={{ top: 50, right: isDashboard ? 80 : 130, bottom: 80, left: 80 }}
+      margin={{ top: 30, right: isDashboard ? 50 : 80, bottom: isDashboard ? 20 : 40, left: isDashboard ? 70 : 100 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}

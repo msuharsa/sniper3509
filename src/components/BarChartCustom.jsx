@@ -67,7 +67,7 @@ const BarChartCustom = ({
       data={barData}
       keys={["value"]}
       indexBy="indexName"
-      margin={{ top: 40, right: 120, bottom: 60, left: 100 }}
+      margin={{ top: 30, right: isDashboard ? 50 : 80, bottom: isDashboard ? 20 : 40, left: isDashboard ? 70 : 100 }}
       padding={0.3}
       colors={({ data }) => data.color}
       borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
