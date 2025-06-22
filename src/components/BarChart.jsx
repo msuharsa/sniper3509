@@ -8,7 +8,23 @@ const BarChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [statKab, setStatKab] = useState([]);
-
+  const CustomLabelLayer = (bars) =>
+    bars.map((bar) => {
+      const label = `${bar.data.value.toFixed(1)}%`;
+      return (
+        <text
+          key={bar.key}
+          x={bar.x + bar.width + 5}
+          y={bar.y + bar.height / 2}
+          alignmentBaseline="middle"
+          fill={bar.data.data.isJember ? "#000" : "#fff"}
+          fontSize={11} // ✅ cocokkan dengan axis
+        >
+          {label}
+        </text>
+      );
+    });
+    
   useEffect(() => {
     axios
       .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
@@ -56,7 +72,7 @@ const BarChart = ({ isDashboard = false }) => {
       enableGridX={false}
       enableGridY={false}
       labelTextColor={(d) =>
-        d.data.isJember ? "#fff" : "#000"
+        d.data.isJember ? colors.orangeAccent[500] : colors.orangeAccent[700]
       }
       label={({ value, data }) => 
         data.isJember ? `${value.toFixed(1)}%` : `${value.toFixed(1)}%`
