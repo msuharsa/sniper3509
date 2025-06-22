@@ -30,8 +30,8 @@ const BarChart = ({ isDashboard = false }) => {
       .get("https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kab")
       .then((res) => {
         const cleanedData = res.data
-          .filter(item => item.persenSentra != null && item.kodeKab)
-          .sort((a, b) => a.persenSentra - b.persenSentra);
+          .filter(item => item["PersenSentra"] != null && item["Kode Kab"])
+          .sort((a, b) => a["PersenSentra"] - b["PersenSentra"]);
         setStatKab(cleanedData);
       })
       .catch((err) => console.error("Gagal mengambil data statbox:", err));
@@ -39,8 +39,8 @@ const BarChart = ({ isDashboard = false }) => {
 
 
   const barData = statKab.map((item) => {
-    const namaKab = item.kodeKab || "UNKNOWN";
-    const persen = parseFloat(item.persenSentra) || 0;
+    const namaKab = item["Kode Kab"] || "UNKNOWN";
+    const persen = parseFloat(item["PersenSentra"]) || 0;
     const isJember = namaKab.includes("3509");
 
     return {
@@ -57,7 +57,7 @@ const BarChart = ({ isDashboard = false }) => {
       data={barData}
       keys={["PersenSentra"]}
       indexBy="kab"
-      margin={{ top: 50, right: 130, bottom: 80, left: 60 }}
+      margin={{ top: 50, right: isDashboard ? 80 : 130, bottom: 80, left: 80 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
@@ -72,10 +72,7 @@ const BarChart = ({ isDashboard = false }) => {
       enableLabel={false}
       enableGridX={false}
       enableGridY={false}
-      enableLabel={false}
       layers={["grid", "axes", "bars", CustomLabelLayer]} // ✅ aktifkan label kustom
-      labelSkipHeight={0}
-      labelSkipWidth={0}
       animate={true}
       motionStiffness={90}
       motionDamping={15}

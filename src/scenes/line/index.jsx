@@ -61,8 +61,8 @@ const LineChart = () => {
         <ChartCard
           title="Rekap Kabupaten/Kota"
           apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kab"
-          indexField="kodeKab"
-          valueField="persenSentra"
+          indexField="Kode Kab"
+          valueField="PersenSentra"
           legendText="Kode Kab./Kota"
           highlightValue="3509"
         />
@@ -71,8 +71,8 @@ const LineChart = () => {
         <ChartCard
           title="Rekap Kecamatan"
           apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kec"
-          indexField="namaKecamatan"
-          valueField="persenSentra"
+          indexField="Kode Kec"
+          valueField="PersenSentra"
           legendText="Kecamatan"
           highlightValue="Sumbersari"
         />
