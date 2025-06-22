@@ -14,7 +14,7 @@ const BarChart = ({ isDashboard = false }) => {
       .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
       .then((res) => {
         const cleanedData = res.data.rekapKab
-          .filter(item => item.persenSentra != null && item.kabupatenKota)
+          .filter(item => item.persenSentra != null && item["kabupaten/kota"])
           .sort((a, b) => a.persenSentra - b.persenSentra);
         setStatKab(cleanedData);
       })
@@ -23,8 +23,8 @@ const BarChart = ({ isDashboard = false }) => {
 
 
   const barData = statKab.map((item) => {
-    const namaKab = item.kabupatenKota || "UNKNOWN";
-    const persen = item.persenSentra ?? 0;
+    const namaKab = item["kabupaten/kota"] || "UNKNOWN";
+    const persen = parseFloat(item.persenSentra) || 0;
     const isJember = namaKab.includes("[3509] JEMBER");
 
     return {
