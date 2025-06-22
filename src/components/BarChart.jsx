@@ -65,7 +65,7 @@ const BarChart = ({ isDashboard = false }) => {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: isDashboard ? undefined : "Kabupaten/Kota",
+          legend: isDashboard ? undefined : "kabupaten/kota",
           legendPosition: "middle",
           legendOffset: -100,
         }}
