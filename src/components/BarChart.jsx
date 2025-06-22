@@ -73,8 +73,6 @@ const BarChart = ({ isDashboard = false }) => {
       enableGridX={false}
       enableGridY={false}
       layers={["grid", "axes", "bars", CustomLabelLayer]} // ✅ aktifkan label kustom
-      labelSkipHeight={0}
-      labelSkipWidth={0}
       animate={true}
       motionStiffness={90}
       motionDamping={15}
