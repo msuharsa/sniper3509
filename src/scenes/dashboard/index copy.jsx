@@ -18,7 +18,6 @@ import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import BarChartCustom from "../components/BarChartCustom";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -135,29 +134,27 @@ const Dashboard = () => {
 
         {/* ROW 2 - Bar Chart */}
         <Box
-          const Dashboard = () => {
-            return (
-              <div>
-                <h3>📊 Rekap Kabupaten/Kota</h3>
-                <BarChartCustom
-                  apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
-                  indexField="kodeKab"
-                  valueField="persenSentra"
-                  legendText="Kode Kab/Kota"
-                  highlightValue="3509"
-                />
-
-                <h3>📊 Rekap Kecamatan</h3>
-                <BarChartCustom
-                  apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
-                  indexField="namaKecamatan"
-                  valueField="persenSentra"
-                  legendText="Kecamatan"
-                  highlightValue="Sumbersari"
-                />
-              </div>
-            );
-          };
+          gridColumn={{ xs: "span 12", sm: "span 6" }}
+          gridRow="span 2"
+          sx={cardStyle}
+        >
+          <Box
+            mt="25px"
+            px="30px"
+            display="flex"
+            flexDirection={{ xs: "column", sm: "row" }}
+            justifyContent="space-between"
+            alignItems={{ xs: "flex-start", sm: "center" }}
+          >
+            <Box>
+              <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
+                Progres Pendataan Menurut Kecamatan
+              </Typography>
+            </Box>
+          </Box>
+          <Box height="250px" mt="-20px">
+            <BarChart isDashboard={true} />
+          </Box>
         </Box>
 
         {/* ROW 3 - Campaign */}
