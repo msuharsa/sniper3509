@@ -10,14 +10,14 @@ const BarChart = ({ isDashboard = false }) => {
   const [statKab, setStatKab] = useState([]);
   const CustomLabelLayer = ({bars}) =>
     bars.map((bar) => {
-      const label = `${bar.data.value.toFixed(1)}%`;
+      const label = `${bar.data.value.toFixed(2)}%`;
       return (
         <text
           key={bar.key}
           x={bar.x + bar.width + 5}
           y={bar.y + bar.height / 2}
           alignmentBaseline="middle"
-          fill={bar.data.data.isJember ? "#000" : "#fff"}
+          fill={bar.color}
           fontSize={11} // ✅ cocokkan dengan axis
         >
           {label}
