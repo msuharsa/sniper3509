@@ -72,12 +72,7 @@ const BarChart = ({ isDashboard = false }) => {
       enableLabel={false}
       enableGridX={false}
       enableGridY={false}
-      labelTextColor={(d) =>
-        d.data.isJember ? colors.orangeAccent[500] : colors.orangeAccent[700]
-      }
-      label={({ value, data }) => 
-        data.isJember ? `${value.toFixed(1)}%` : `${value.toFixed(1)}%`
-      }
+      layers={["grid", "axes", "bars", CustomLabelLayer]} // ✅ aktifkan label kustom
       labelSkipHeight={0}
       labelSkipWidth={0}
       animate={true}
