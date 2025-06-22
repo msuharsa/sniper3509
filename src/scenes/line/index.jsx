@@ -15,34 +15,52 @@ const LineChart = () => {
 
   return (
     <Box
-      gridColumn={{ xs: "span 12", sm: "span 6" }}
-      gridRow="span 2"
-      sx={{ ...cardStyle, p: 3 }}
+      sx={{
+        display: "grid",
+        gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, // responsif: 1 kolom di mobile, 2 kolom di desktop
+        gap: 3,
+      }}
     >
-      <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
-        📊 Rekap Kabupaten/Kota
-      </Typography>
-      <Box height="250px">
-        <BarChartCustom
-          apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
-          indexField="kodeKab"
-          valueField="persenSentra"
-          legendText="Kode Kab/Kota"
-          highlightValue="3509"
-        />
+      <Box
+        sx={{
+          backgroundColor: colors.primary[400],
+          borderRadius: "12px",
+          p: 3,
+        }}
+      >
+        <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
+          📊 Rekap Kabupaten/Kota
+        </Typography>
+        <Box height="250px">
+          <BarChartCustom
+            apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
+            indexField="kodeKab"
+            valueField="persenSentra"
+            legendText="Kode Kab/Kota"
+            highlightValue="3509"
+          />
+        </Box>
       </Box>
 
-      <Typography variant="h5" fontWeight="600" mt="30px" mb="15px" color={colors.grey[100]}>
-        📊 Rekap Kecamatan
-      </Typography>
-      <Box height="250px">
-        <BarChartCustom
-          apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
-          indexField="namaKecamatan"
-          valueField="persenSentra"
-          legendText="Kecamatan"
-          highlightValue="Sumbersari"
-        />
+      <Box
+        sx={{
+          backgroundColor: colors.primary[400],
+          borderRadius: "12px",
+          p: 3,
+        }}
+      >
+        <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
+          📊 Rekap Kecamatan
+        </Typography>
+        <Box height="250px">
+          <BarChartCustom
+            apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
+            indexField="namaKecamatan"
+            valueField="persenSentra"
+            legendText="Kecamatan"
+            highlightValue="Sumbersari"
+          />
+        </Box>
       </Box>
     </Box>
   );
