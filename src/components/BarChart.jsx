@@ -27,9 +27,9 @@ const BarChart = ({ isDashboard = false }) => {
 
   useEffect(() => {
     axios
-      .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
+      .get("https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kab")
       .then((res) => {
-        const cleanedData = res.data.rekapKab
+        const cleanedData = res.data
           .filter(item => item.persenSentra != null && item.kodeKab)
           .sort((a, b) => a.persenSentra - b.persenSentra);
         setStatKab(cleanedData);
