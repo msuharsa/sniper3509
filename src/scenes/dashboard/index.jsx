@@ -135,29 +135,35 @@ const Dashboard = () => {
 
         {/* ROW 2 - Bar Chart */}
         <Box
-          const Dashboard = () => {
-            return (
-              <div>
-                <h3>📊 Rekap Kabupaten/Kota</h3>
-                <BarChartCustom
-                  apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
-                  indexField="kodeKab"
-                  valueField="persenSentra"
-                  legendText="Kode Kab/Kota"
-                  highlightValue="3509"
-                />
+          gridColumn={{ xs: "span 12", sm: "span 6" }}
+          gridRow="span 2"
+          sx={{ ...cardStyle, p: 3 }}
+        >
+          <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
+            📊 Rekap Kabupaten/Kota
+          </Typography>
+          <Box height="250px">
+            <BarChartCustom
+              apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
+              indexField="kodeKab"
+              valueField="persenSentra"
+              legendText="Kode Kab/Kota"
+              highlightValue="3509"
+            />
+          </Box>
 
-                <h3>📊 Rekap Kecamatan</h3>
-                <BarChartCustom
-                  apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
-                  indexField="namaKecamatan"
-                  valueField="persenSentra"
-                  legendText="Kecamatan"
-                  highlightValue="Sumbersari"
-                />
-              </div>
-            );
-          };
+          <Typography variant="h5" fontWeight="600" mt="30px" mb="15px" color={colors.grey[100]}>
+            📊 Rekap Kecamatan
+          </Typography>
+          <Box height="250px">
+            <BarChartCustom
+              apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
+              indexField="namaKecamatan"
+              valueField="persenSentra"
+              legendText="Kecamatan"
+              highlightValue="Sumbersari"
+            />
+          </Box>
         </Box>
 
         {/* ROW 3 - Campaign */}
