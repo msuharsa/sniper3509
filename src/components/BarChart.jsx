@@ -57,7 +57,7 @@ const BarChart = ({ isDashboard = false }) => {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Persentase Pendataan Sentra Ekonomi",
+          legend: "persenSentra",
           legendPosition: "middle",
           legendOffset: 40,
         }}
