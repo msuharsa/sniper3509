@@ -53,7 +53,7 @@ const BarChart = ({ isDashboard = false }) => {
 
   return (
     <ResponsiveBar
-      layout="horizontal"
+      layout={isDashboard ? "vertical" : "horizontal"}
       data={barData}
       keys={["PersenSentra"]}
       indexBy="kab"
