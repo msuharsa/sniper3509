@@ -15,23 +15,20 @@ const LineChart = () => {
 
   return (
     <Box
-      sx={{
-        display: "grid",
-        gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, // responsif: 1 kolom di mobile, 2 kolom di desktop
-        gap: 3,
-      }}
+      display="grid"
+      gridTemplateColumns={{ xs: "1fr", sm: "repeat(12, 1fr)" }}
+      gridAutoRows="140px"
+      gap="20px"
     >
       <Box
-        sx={{
-          backgroundColor: colors.primary[400],
-          borderRadius: "12px",
-          p: 3,
-        }}
+        gridColumn={{ xs: "span 12", sm: "span 6" }}
+        gridRow="span 5"
+        sx={cardStyle}
       >
         <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
-          📊 Rekap Kabupaten/Kota
+          Rekap Kabupaten/Kota
         </Typography>
-        <Box height="250px">
+        <Box>
           <BarChartCustom
             apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
             indexField="kodeKab"
@@ -52,7 +49,7 @@ const LineChart = () => {
         <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
           📊 Rekap Kecamatan
         </Typography>
-        <Box height="250px">
+        <Box>
           <BarChartCustom
             apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
             indexField="namaKecamatan"
