@@ -70,7 +70,6 @@ const BarChart = ({ isDashboard = false }) => {
       }
       labelSkipHeight={12}
       labelSkipWidth={16}
-      labelFontSize={(bar) => (bar.data.isJember ? 16 : 11)}
       animate={true}
       motionStiffness={90}
       motionDamping={15}
