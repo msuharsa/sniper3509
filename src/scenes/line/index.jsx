@@ -71,15 +71,15 @@ const LineChart = () => {
                 Rekap Kabupaten/Kota
               </Typography>
             </Box>
-          </Box>
-          <Box height="560px">
-            <BarChartCustom
-              apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
-              indexField="namaKecamatan"
-              valueField="persenSentra"
-              legendText="Kecamatan"
-              highlightValue="Sumbersari"
-            />
+            <Box height="560px">
+              <BarChartCustom
+                apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
+                indexField="namaKecamatan"
+                valueField="persenSentra"
+                legendText="Kecamatan"
+                highlightValue="Sumbersari"
+              />
+            </Box>
           </Box>
         </Box>
       </Box>
