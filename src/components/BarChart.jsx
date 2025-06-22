@@ -8,7 +8,7 @@ const BarChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [statKab, setStatKab] = useState([]);
-  const CustomLabelLayer = (bars) =>
+  const CustomLabelLayer = ({bars}) =>
     bars.map((bar) => {
       const label = `${bar.data.value.toFixed(1)}%`;
       return (
@@ -72,7 +72,10 @@ const BarChart = ({ isDashboard = false }) => {
       enableLabel={false}
       enableGridX={false}
       enableGridY={false}
+      enableLabel={false}
       layers={["grid", "axes", "bars", CustomLabelLayer]} // ✅ aktifkan label kustom
+      labelSkipHeight={0}
+      labelSkipWidth={0}
       animate={true}
       motionStiffness={90}
       motionDamping={15}
