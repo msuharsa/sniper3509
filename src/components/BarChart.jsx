@@ -52,14 +52,17 @@ const BarChart = ({ isDashboard = false }) => {
         legendPosition: "middle",
         legendOffset: -50,
       }}
+      axisBottom={null}
+      enableGridX={false}
+      enableGridY={false}
       labelTextColor={(d) =>
         d.data.isJember ? "#fff" : "#000"
       }
       label={({ value, data }) => 
         data.isJember ? `${value.toFixed(1)}%` : `${value.toFixed(1)}%`
       }
-      labelSkipHeight={12}
-      labelSkipWidth={16}
+      labelSkipHeight={0}
+      labelSkipWidth={0}
       animate={true}
       motionStiffness={90}
       motionDamping={15}
