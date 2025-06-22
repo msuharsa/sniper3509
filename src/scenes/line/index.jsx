@@ -13,6 +13,48 @@ const LineChart = () => {
     borderRadius: "12px",
   };
 
+  const ChartCard = ({
+    title,
+    apiUrl,
+    indexField,
+    valueField,
+    legendText,
+    highlightValue,
+  }) => (
+    <Box
+      gridColumn={{ xs: "span 12", sm: "span 6" }}
+      gridRow="span 2"
+      sx={cardStyle}
+    >
+      <Box
+        mt="25px"
+        px="30px"
+        display="flex"
+        flexDirection={{ xs: "column", sm: "row" }}
+        justifyContent="space-between"
+        alignItems={{ xs: "flex-start", sm: "center" }}
+      >
+        <Typography
+          variant="h5"
+          fontWeight="600"
+          mb="15px"
+          color={colors.grey[100]}
+        >
+          {title}
+        </Typography>
+      </Box>
+      <Box height="560px">
+        <BarChartCustom
+          apiUrl={apiUrl}
+          indexField={indexField}
+          valueField={valueField}
+          legendText={legendText}
+          highlightValue={highlightValue}
+        />
+      </Box>
+    </Box>
+  );
+
   return (
     <Box m={{ xs: "10px", sm: "20px" }}>
       <Box
@@ -21,67 +63,23 @@ const LineChart = () => {
         gridAutoRows="140px"
         gap="20px"
       >
-        {/* Kolom 1 */}
-        <Box
-          gridColumn={{ xs: "span 12", sm: "span 6" }}
-          gridRow="span 2"
-          sx={cardStyle}
-        >
-          <Box
-            mt="25px"
-            px="30px"
-            display="flex"
-            flexDirection={{ xs: "column", sm: "row" }}
-            justifyContent="space-between"
-            alignItems={{ xs: "flex-start", sm: "center" }}
-          >
-            <Box>
-              <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
-                Rekap Kabupaten/Kota
-              </Typography>
-            </Box>
-          </Box>
-          <Box height="560px">
-            <BarChartCustom
-              apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
-              indexField="kodeKab"
-              valueField="persenSentra"
-              legendText="Kode Kab/Kota"
-              highlightValue="3509"
-            />
-          </Box>
-        </Box>
-      
-        {/* Kolom 2 */}
-        <Box
-          gridColumn={{ xs: "span 12", sm: "span 6" }}
-          gridRow="span 2"
-          sx={cardStyle}
-        >
-          <Box
-            mt="25px"
-            px="30px"
-            display="flex"
-            flexDirection={{ xs: "column", sm: "row" }}
-            justifyContent="space-between"
-            alignItems={{ xs: "flex-start", sm: "center" }}
-          >
-            <Box>
-              <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
-                Rekap Kabupaten/Kota
-              </Typography>
-            </Box>
-            <Box height="560px">
-              <BarChartCustom
-                apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
-                indexField="namaKecamatan"
-                valueField="persenSentra"
-                legendText="Kecamatan"
-                highlightValue="Sumbersari"
-              />
-            </Box>
-          </Box>
-        </Box>
+        <ChartCard
+          title="Rekap Kabupaten/Kota"
+          apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
+          indexField="kodeKab"
+          valueField="persenSentra"
+          legendText="Kode Kab/Kota"
+          highlightValue="3509"
+        />
+
+        <ChartCard
+          title="Rekap Kecamatan"
+          apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
+          indexField="namaKecamatan"
+          valueField="persenSentra"
+          legendText="Kecamatan"
+          highlightValue="Sumbersari"
+        />
       </Box>
     </Box>
   );
