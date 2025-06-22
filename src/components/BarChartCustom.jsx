@@ -16,18 +16,23 @@ const BarChartCustom = ({
   const colors = tokens(theme.palette.mode);
   const [chartData, setChartData] = useState([]);
 
-  useEffect(() => {
+    useEffect(() => {
     axios
-      .get(apiUrl)
-      .then((res) => {
-        const items = Object.values(res.data)[0];
+        .get(apiUrl)
+        .then((res) => {
+        const items = res.data; // <-- Langsung ambil array
         const cleaned = items
-          .filter((d) => d[valueField] != null && d[indexField])
-          .sort((a, b) => parseFloat(a[valueField]) - parseFloat(b[valueField]));
+        .filter((d) =>
+            d[valueField] != null &&
+            d[valueField] !== "" &&
+            !isNaN(parseFloat(d[valueField])) &&
+            d[indexField]
+        )
+        .sort((a, b) => parseFloat(a[valueField]) - parseFloat(b[valueField]));
         setChartData(cleaned);
-      })
-      .catch((err) => console.error("Gagal fetch data:", err));
-  }, [apiUrl, indexField, valueField]);
+        })
+        .catch((err) => console.error("Gagal fetch data:", err));
+    }, [apiUrl, indexField, valueField]);
 
   const barData = chartData.map((item) => {
     const name = item[indexField];

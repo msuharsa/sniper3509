@@ -59,17 +59,17 @@ const LineChart = () => {
       >
         {/* Grafik 1: Kabupaten/Kota */}
         <ChartCard
-          title="📊 Rekap Kabupaten/Kota"
+          title="Rekap Kabupaten/Kota"
           apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kab"
           indexField="kodeKab"
           valueField="persenSentra"
-          legendText="Kode Kab/Kota"
+          legendText="Kode Kab./Kota"
           highlightValue="3509"
         />
 
         {/* Grafik 2: Kecamatan */}
         <ChartCard
-          title="📊 Rekap Kecamatan"
+          title="Rekap Kecamatan"
           apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kec"
           indexField="namaKecamatan"
           valueField="persenSentra"
