@@ -143,27 +143,7 @@ const Dashboard = () => {
             📊 Rekap Kabupaten/Kota
           </Typography>
           <Box height="250px">
-            <BarChartCustom
-              apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
-              indexField="kodeKab"
-              valueField="persenSentra"
-              legendText="Kode Kab/Kota"
-              highlightValue="3509"
-            />
-          </Box>
-
-          <Typography variant="h5" fontWeight="600" mt="30px" mb="15px" color={colors.grey[100]}>
-            📊 Rekap Kecamatan
-          </Typography>
-          <Box height="250px">
-            <BarChartCustom
-              apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
-              indexField="namaKecamatan"
-              valueField="persenSentra"
-              legendText="Kecamatan"
-              highlightValue="Sumbersari"
-            />
-          </Box>
+           </Box>
         </Box>
 
         {/* ROW 3 - Campaign */}
