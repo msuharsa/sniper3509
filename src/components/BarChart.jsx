@@ -37,6 +37,7 @@ const BarChart = ({ isDashboard = false }) => {
 
   return (
     <ResponsiveBar
+      layout="horizontal"
       data={barData}
       keys={["PersenSentra"]}
       indexBy="kab"
@@ -50,7 +51,7 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: -45,
-        legend: isDashboard ? undefined : "kode",
+        legend: isDashboard ? undefined : "PersenSentra",
         legendPosition: "middle",
         legendOffset: 60,
       }}
@@ -58,7 +59,7 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "PersenSentra",
+        legend: "Kode",
         legendPosition: "middle",
         legendOffset: -50,
       }}

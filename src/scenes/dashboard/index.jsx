@@ -136,22 +136,27 @@ const Dashboard = () => {
         <Box
           gridColumn={{ xs: "span 12", sm: "span 6" }}
           gridRow="span 2"
-          sx={{ ...cardStyle, overflow: "auto" }}
+          sx={cardStyle}
         >
           <Box
+            mt="25px"
+            px="30px"
             display="flex"
+            flexDirection={{ xs: "column", sm: "row" }}
             justifyContent="space-between"
-            alignItems="center"
-            p="15px"
+            alignItems={{ xs: "flex-start", sm: "center" }}
           >
-            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Progres Pendataan Menurut Kecamatan
-            </Typography>
+            <Box>
+              <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
+                Progres Pendataan Menurut Kecamatan
+              </Typography>
+            </Box>
           </Box>
           <Box height="250px" mt="-20px">
             <BarChart isDashboard={true} />
           </Box>
         </Box>
+
         {/* ROW 3 - Campaign */}
         <Box
           gridColumn={{ xs: "span 12", sm: "span 4" }}
