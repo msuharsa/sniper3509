@@ -13,22 +13,28 @@ const BarChart = ({ isDashboard = false }) => {
     axios
       .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
       .then((res) => {
-        // Sort by PersenSentra ascending
-        const sortedData = res.data.rekapKab
-          .filter(item => item.persenSentra !== null)
+        console.log("DATA DARI API:", res.data.rekapKab);
+        const cleanedData = res.data.rekapKab
+          .filter(item => item.persenSentra != null && item.kabupatenKota)
           .sort((a, b) => a.persenSentra - b.persenSentra);
-
-        setStatKab(sortedData);
+        setStatKab(cleanedData);
       })
       .catch((err) => console.error("Gagal mengambil data statbox:", err));
   }, []);
 
-  const barData = statKab.map((item) => ({
-    "Kabupaten/Kota": item.kabupatenKota,
-    "PersenSentra": item.persenSentra,
-    color: item.kabupatenKota.includes("[3509] JEMBER") ? "#facc15" : colors.greenAccent[600],
-    isJember: item.kabupatenKota.includes("[3509] JEMBER"),
-  }));
+
+  const barData = statKab.map((item) => {
+    const namaKab = item.kabupatenKota || "UNKNOWN";
+    const persen = item.persenSentra ?? 0;
+    const isJember = namaKab.includes("[3509] JEMBER");
+
+    return {
+      kab: namaKab,
+      PersenSentra: persen,
+      color: isJember ? "#facc15" : colors.greenAccent[600],
+      isJember: isJember,
+    };
+  });
 
   return (
     <ResponsiveBar
