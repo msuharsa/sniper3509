@@ -14,7 +14,7 @@ const BarChart = ({ isDashboard = false }) => {
       .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
       .then((res) => {
         const cleanedData = res.data.rekapKab
-          .filter(item => item.persenSentra != null && item["kabupaten/kota"])
+          .filter(item => item.persenSentra != null && item["kode"])
           .sort((a, b) => a.persenSentra - b.persenSentra);
         setStatKab(cleanedData);
       })
@@ -23,14 +23,14 @@ const BarChart = ({ isDashboard = false }) => {
 
 
   const barData = statKab.map((item) => {
-    const namaKab = item["kabupaten/kota"] || "UNKNOWN";
+    const namaKab = item.kode] || "UNKNOWN";
     const persen = parseFloat(item.persenSentra) || 0;
-    const isJember = namaKab.includes("[3509] JEMBER");
+    const isJember = namaKab.includes("[3509]");
 
     return {
       kab: namaKab,
       PersenSentra: persen,
-      color: isJember ? colors.orangeAccent[500] : colors.orangeAccent[600],
+      color: isJember ? colors.orangeAccent[500] : colors.orangeAccent[700],
       isJember: isJember,
     };
   });
