@@ -140,7 +140,7 @@ const Dashboard = () => {
           sx={{ ...cardStyle, p: 3 }}
         >
           <Typography variant="h5" fontWeight="600" mb="15px" color={colors.grey[100]}>
-            📊 Rekap Kabupaten/Kota
+            Rekap Kabupaten/Kota
           </Typography>
           <Box height="250px">
            </Box>

@@ -1,4 +1,3 @@
-// BarChartCustom.js
 import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
@@ -24,7 +23,7 @@ const BarChartCustom = ({
         const items = Object.values(res.data)[0];
         const cleaned = items
           .filter((d) => d[valueField] != null && d[indexField])
-          .sort((a, b) => a[valueField] - b[valueField]);
+          .sort((a, b) => parseFloat(a[valueField]) - parseFloat(b[valueField]));
         setChartData(cleaned);
       })
       .catch((err) => console.error("Gagal fetch data:", err));
@@ -33,7 +32,7 @@ const BarChartCustom = ({
   const barData = chartData.map((item) => {
     const name = item[indexField];
     const value = parseFloat(item[valueField]) || 0;
-    const isHighlight = name.includes(highlightCode);
+    const isHighlight = highlightCode ? name.includes(highlightCode) : false;
 
     return {
       indexName: name,
@@ -47,11 +46,11 @@ const BarChartCustom = ({
     bars.map((bar) => (
       <text
         key={bar.key}
-        x={bar.x + bar.width + 5}
+        x={bar.x + bar.width + 6}
         y={bar.y + bar.height / 2}
         alignmentBaseline="middle"
-        fill={bar.color}
         fontSize={11}
+        fill={bar.color}
       >
         {bar.data.value.toFixed(2)}%
       </text>
@@ -63,7 +62,7 @@ const BarChartCustom = ({
       data={barData}
       keys={["value"]}
       indexBy="indexName"
-      margin={{ top: 50, right: 120, bottom: 60, left: 100 }}
+      margin={{ top: 40, right: 120, bottom: 60, left: 100 }}
       padding={0.3}
       colors={({ data }) => data.color}
       borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
@@ -71,6 +70,9 @@ const BarChartCustom = ({
         legend: legendText,
         legendPosition: "middle",
         legendOffset: -50,
+        tickSize: 5,
+        tickPadding: 5,
+        tickRotation: 0,
       }}
       axisBottom={null}
       enableLabel={false}
@@ -79,8 +81,16 @@ const BarChartCustom = ({
       layers={["grid", "axes", "bars", CustomLabelLayer]}
       theme={{
         axis: {
-          ticks: { text: { fill: colors.grey[100] } },
-          legend: { text: { fill: colors.grey[100] } },
+          ticks: {
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+          legend: {
+            text: {
+              fill: colors.grey[100],
+            },
+          },
         },
         tooltip: {
           container: {

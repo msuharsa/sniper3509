@@ -11,8 +11,10 @@ const LineChart = () => {
   const cardStyle = {
     backgroundColor: colors.primary[400],
     borderRadius: "12px",
+    padding: "20px",
   };
 
+  // Komponen ChartCard reusable
   const ChartCard = ({
     title,
     apiUrl,
@@ -26,24 +28,15 @@ const LineChart = () => {
       gridRow="span 2"
       sx={cardStyle}
     >
-      <Box
-        mt="25px"
-        px="30px"
-        display="flex"
-        flexDirection={{ xs: "column", sm: "row" }}
-        justifyContent="space-between"
-        alignItems={{ xs: "flex-start", sm: "center" }}
+      <Typography
+        variant="h5"
+        fontWeight="600"
+        mb="20px"
+        color={colors.grey[100]}
       >
-        <Typography
-          variant="h5"
-          fontWeight="600"
-          mb="15px"
-          color={colors.grey[100]}
-        >
-          {title}
-        </Typography>
-      </Box>
-      <Box height="560px">
+        {title}
+      </Typography>
+      <Box height="500px">
         <BarChartCustom
           apiUrl={apiUrl}
           indexField={indexField}
@@ -57,14 +50,16 @@ const LineChart = () => {
 
   return (
     <Box m={{ xs: "10px", sm: "20px" }}>
+      {/* Grid 2 kolom di desktop, 1 kolom di mobile */}
       <Box
         display="grid"
         gridTemplateColumns={{ xs: "1fr", sm: "repeat(12, 1fr)" }}
-        gridAutoRows="140px"
+        gridAutoRows="minmax(300px, auto)"
         gap="20px"
       >
+        {/* Grafik 1: Kabupaten/Kota */}
         <ChartCard
-          title="Rekap Kabupaten/Kota"
+          title="📊 Rekap Kabupaten/Kota"
           apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
           indexField="kodeKab"
           valueField="persenSentra"
@@ -72,8 +67,9 @@ const LineChart = () => {
           highlightValue="3509"
         />
 
+        {/* Grafik 2: Kecamatan */}
         <ChartCard
-          title="Rekap Kecamatan"
+          title="📊 Rekap Kecamatan"
           apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
           indexField="namaKecamatan"
           valueField="persenSentra"
