@@ -38,7 +38,7 @@ const BarChartCustom = ({
     return {
       indexName: name,
       value,
-      color: isHighlight ? colors.orangeAccent[500] : colors.orangeAccent[700],
+      color: isHighlight ? colors.orangeAccent[300] : colors.orangeAccent[500],
       isHighlight,
     };
   });
