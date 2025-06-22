@@ -14,7 +14,7 @@ const BarChart = ({ isDashboard = false }) => {
       .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
       .then((res) => {
         const cleanedData = res.data.rekapKab
-          .filter(item => item.persenSentra != null && item["kode"])
+          .filter(item => item.persenSentra != null && item.kode)
           .sort((a, b) => a.persenSentra - b.persenSentra);
         setStatKab(cleanedData);
       })
@@ -50,7 +50,7 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: -45,
-        legend: isDashboard ? undefined : "kabupaten/kota",
+        legend: isDashboard ? undefined : "kode",
         legendPosition: "middle",
         legendOffset: 60,
       }}
