@@ -48,11 +48,11 @@ const BarChart = ({ isDashboard = false }) => {
       colors={({ data }) => data.color}
       borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
       }}
-      axisLeft={{
+      axisLeft={
         legend: "Kode Kabupaten/Kota",
         legendPosition: "middle",
         legendOffset: -50,
-      }}
+      }
       labelTextColor={(d) =>
         d.data.isJember ? "#fff" : "#000"
       }
