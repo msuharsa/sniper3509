@@ -26,8 +26,8 @@ const BarChart = ({ isDashboard = false }) => {
   const barData = statKab.map((item) => ({
     "Kabupaten/Kota": item.kabupatenKota,
     "PersenSentra": item.persenSentra,
-    color: item.kabupatenKota.includes("JEMBER") ? "#facc15" : colors.greenAccent[600],
-    isJember: item.kabupatenKota.includes("JEMBER"),
+    color: item.kabupatenKota.includes("[3509] JEMBER") ? "#facc15" : colors.greenAccent[600],
+    isJember: item.kabupatenKota.includes("[3509] JEMBER"),
   }));
 
   return (
