@@ -47,7 +47,6 @@ const BarChart = ({ isDashboard = false }) => {
       indexScale={{ type: "band", round: true }}
       colors={({ data }) => data.color}
       borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-      }}
       axisLeft={{
         legend: "Kode Kabupaten/Kota",
         legendPosition: "middle",
