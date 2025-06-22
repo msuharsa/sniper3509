@@ -34,9 +34,9 @@ const Dashboard = () => {
   
   useEffect(() => {
     axios
-      .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/dashboard")
-      .then((res) => setStatDashboard(res.data.dashboard))
-      .catch((err) => console.error("Gagal mengambil data statbox:", err));
+      .get("https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Dashboard")
+      .then((res) => setStatDashboard(res.data))
+      .catch((err) => console.error("Gagal ambil data dashboard:", err));
   }, []);
 
   const iconMap = {
