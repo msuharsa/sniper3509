@@ -13,7 +13,6 @@ const BarChart = ({ isDashboard = false }) => {
     axios
       .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
       .then((res) => {
-        console.log("DATA DARI API:", res.data.rekapKab);
         const cleanedData = res.data.rekapKab
           .filter(item => item.persenSentra != null && item.kabupatenKota)
           .sort((a, b) => a.persenSentra - b.persenSentra);
@@ -40,7 +39,7 @@ const BarChart = ({ isDashboard = false }) => {
     <ResponsiveBar
       data={barData}
       keys={["PersenSentra"]}
-      indexBy="Kabupaten/Kota"
+      indexBy="kab"
       margin={{ top: 50, right: 130, bottom: 80, left: 60 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
