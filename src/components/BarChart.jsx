@@ -14,7 +14,7 @@ const BarChart = ({ isDashboard = false }) => {
       .get("https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab")
       .then((res) => {
         const cleanedData = res.data.rekapKab
-          .filter(item => item.persenSentra != null && item.kode)
+          .filter(item => item.persenSentra != null && item.kodeKab)
           .sort((a, b) => a.persenSentra - b.persenSentra);
         setStatKab(cleanedData);
       })
@@ -23,9 +23,9 @@ const BarChart = ({ isDashboard = false }) => {
 
 
   const barData = statKab.map((item) => {
-    const namaKab = item.kode || "UNKNOWN";
+    const namaKab = item.kodeKab || "UNKNOWN";
     const persen = parseFloat(item.persenSentra) || 0;
-    const isJember = namaKab.includes("[3509]");
+    const isJember = namaKab.includes("3509");
 
     return {
       kab: namaKab,
@@ -59,7 +59,7 @@ const BarChart = ({ isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "Kode",
+        legend: "Kode Kabupaten/Kota",
         legendPosition: "middle",
         legendOffset: -50,
       }}
