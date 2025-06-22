@@ -60,7 +60,7 @@ const LineChart = () => {
         {/* Grafik 1: Kabupaten/Kota */}
         <ChartCard
           title="📊 Rekap Kabupaten/Kota"
-          apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
+          apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kab"
           indexField="kodeKab"
           valueField="persenSentra"
           legendText="Kode Kab/Kota"
@@ -70,7 +70,7 @@ const LineChart = () => {
         {/* Grafik 2: Kecamatan */}
         <ChartCard
           title="📊 Rekap Kecamatan"
-          apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKec"
+          apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kec"
           indexField="namaKecamatan"
           valueField="persenSentra"
           legendText="Kecamatan"

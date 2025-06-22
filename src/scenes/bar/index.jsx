@@ -25,7 +25,7 @@ const Bar = () => {
         </Typography>
         <Box height="560px">
           <BarChartCustom
-            apiUrl="https://api.sheety.co/8841a2b55e10480aa7475b12fd451f5c/dataGerpas/rekapKab"
+            apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kab"
             indexField="kodeKab"
             valueField="persenSentra"
             legendText="Kode Kab/Kota"
