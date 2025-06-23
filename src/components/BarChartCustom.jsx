@@ -52,21 +52,6 @@ useEffect(() => {
     }, [apiUrl, indexField, valueField]
 );
 
-
-//const barData = statKab.map((item) => {
-//    const namaKab = item["Kode Kab"] || "UNKNOWN";
-//    const persen = parseFloat(item["PersenSentra"]) || 0;
-//    const isJember = namaKab.includes("3509");
-
-//    return {
-//      kab: namaKab,
-//      PersenSentra: persen,
-//      color: isJember ? colors.orangeAccent[500] : colors.orangeAccent[700],
-//      isJember: isJember,
-//    };
-//  });
-
-
 const barData = chartData.map((item) => {
     const name = item[indexField];
     const value = parseFloat(item[valueField]) || 0;
@@ -75,7 +60,7 @@ const barData = chartData.map((item) => {
     return {
         indexName: name,
         value,
-        color: isHighlight ? colors.orangeAccent[300] : colors.orangeAccent[500],
+        color: isHighlight ? colors.orangeAccent[100] : colors.orangeAccent[400],
         isHighlight,
     };
 });
@@ -115,7 +100,7 @@ const barData = chartData.map((item) => {
                     legend: legendText,
                     legendPosition: "middle",
                     legendOffset: -50,
-                    tickSize: 5,
+                    tickSize: 0,
                     tickPadding: 5,
                     tickRotation: 0,
                 }
@@ -126,7 +111,7 @@ const barData = chartData.map((item) => {
                     legend: legendText,
                     legendPosition: "middle",
                     legendOffset: 40,
-                    tickSize: 5,
+                    tickSize: 0,
                     tickPadding: 5,
                     tickRotation: 90,
                 }
