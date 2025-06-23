@@ -4,7 +4,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import BarChartCustom from "../../components/BarChartCustom";
 
-const LineChart = () => {
+const BarChartMultiple = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -81,4 +81,4 @@ const LineChart = () => {
   );
 };
 
-export default LineChart;
+export default BarChartMultiple;
