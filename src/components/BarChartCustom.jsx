@@ -67,39 +67,39 @@ const barData = chartData.map((item) => {
             data={barData}
             keys={["value"]}
             indexBy="indexName"
-//            margin={{ 
-//                top: 30, 
-//                right: isDashboard ? 30 : 80, 
-//                bottom: isDashboard ? 60 : 40, 
-//                left: isDashboard ? 40 : 100 
-//            }}
+            margin={{ 
+                top: 30, 
+                right: 30, 
+                bottom: isDashboard ? 80 : 40, 
+                left: isDashboard ? 40 : 80 
+            }}
             padding={0.3}
             colors={({ data }) => data.color}
             borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-//            axisLeft={
-//            isDashboard
-//                ? null
-//                : {
-//                    legend: legendText,
-//                    legendPosition: "middle",
-//                    legendOffset: -50,
-//                    tickSize: 5,
-//                    tickPadding: 5,
-//                    tickRotation: 0,
-//                }
-//            }
-//            axisBottom={
-//            isDashboard
-//                ? {
-//                    legend: legendText,
-//                    legendPosition: "middle",
-//                    legendOffset: 40,
-//                    tickSize: 5,
-//                    tickPadding: 5,
-//                    tickRotation: 90,
-//                }
-//                : null
-//            }
+            axisLeft={
+            isDashboard
+                ? null
+                : {
+                    legend: legendText,
+                    legendPosition: "middle",
+                    legendOffset: -50,
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                }
+            }
+            axisBottom={
+            isDashboard
+                ? {
+                    legend: legendText,
+                    legendPosition: "middle",
+                    legendOffset: 40,
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 90,
+                }
+                : null
+            }
             enableLabel={false}
             enableGridX={false}
             enableGridY={false}
