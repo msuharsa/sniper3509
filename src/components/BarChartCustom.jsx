@@ -80,7 +80,7 @@ const barData = chartData.map((item) => {
         ));
     return (
         <ResponsiveBar
-//            layout={isDashboard ? "vertical" : "horizontal"}
+            layout={isDashboard ? "vertical" : "horizontal"}
             data={barData}
             keys={["value"]}
             indexBy="indexName"

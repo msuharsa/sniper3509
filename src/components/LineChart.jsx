@@ -9,7 +9,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
 
   return (
     <ResponsiveLine
-      layout={"vertical"}
+//      layout={"vertical"}
       data={data}
       theme={{
         axis: {
