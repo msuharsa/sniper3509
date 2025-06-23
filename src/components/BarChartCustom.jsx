@@ -100,10 +100,10 @@ const barData = chartData.map((item) => {
             keys={["value"]}
             indexBy="indexName"
             margin={{ 
-                top: 30, 
+                top: 0, 
                 right: 30, 
-                bottom: isDashboard ? 80 : 40, 
-                left: isDashboard ? 40 : 80 
+                bottom: isDashboard ? 60 : 40, 
+                left: isDashboard ? 40 : 60 
             }}
             padding={0.3}
             colors={({ data }) => data.color}
