@@ -73,7 +73,8 @@ const barData = chartData.map((item) => {
             borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
             axisLeft={
             !isDashboard
-            ?   {
+            ?   null :
+                {
                     legend: legendText,
                     legendPosition: "middle",
                     legendOffset: -50,
@@ -81,12 +82,10 @@ const barData = chartData.map((item) => {
                     tickPadding: 5,
                     tickRotation: 0,
                 }
-                : null
             }
             axisBottom={
                 isDashboard
-                ?   null :
-                    {
+                ?   {
                         legend: legendText,
                         legendPosition: "middle",
                         legendOffset: 40,
@@ -94,6 +93,7 @@ const barData = chartData.map((item) => {
                         tickPadding: 5,
                         tickRotation: 90,
                     }
+                    : null
             }
             enableLabel={false}
             enableGridX={false}
