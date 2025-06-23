@@ -73,14 +73,14 @@ const barData = chartData.map((item) => {
                 y={bar.y + bar.height / 2}
                 alignmentBaseline="middle"
                 fontSize={11}
-                fill={bar.color}
+                fill={theme.palette.mode === "dark" ? colors.orangeAccent[400] : colors.orangeAccent[700]}
             >
                 {bar.data.value.toFixed(2)}%
             </text>
         ));
     return (
         <ResponsiveBar
-            layout={isDashboard ? "vertical" : "horizontal"}
+//            layout={isDashboard ? "vertical" : "horizontal"}
             data={barData}
             keys={["value"]}
             indexBy="indexName"
