@@ -192,7 +192,7 @@ const Dashboard = () => {
             Progres Update Profilling Menurut Kecamatan
           </Typography>
           <Box height="250px">
-            <BarChart isDashboard={true} />
+            <BarChartCustom isDashboard={true} />
           </Box>
         </Box>
 

@@ -4,6 +4,23 @@ import { tokens } from "../theme";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const CustomLabelLayer = ({bars}) =>
+    bars.map((bar) => {
+      const label = `${bar.data.value.toFixed(2)}%`;
+      return (
+        <text
+          key={bar.key}
+          x={bar.x + bar.width + 5}
+          y={bar.y + bar.height / 2}
+          alignmentBaseline="middle"
+          fill={bar.color}
+          fontSize={11} // ✅ cocokkan dengan axis
+        >
+          {label}
+        </text>
+      );
+    });
+
 const BarChartCustom = ({
     apiUrl,
     indexField,
@@ -34,6 +51,21 @@ useEffect(() => {
         .catch((err) => console.error("Gagal fetch data:", err));
     }, [apiUrl, indexField, valueField]
 );
+
+
+//const barData = statKab.map((item) => {
+//    const namaKab = item["Kode Kab"] || "UNKNOWN";
+//    const persen = parseFloat(item["PersenSentra"]) || 0;
+//    const isJember = namaKab.includes("3509");
+
+//    return {
+//      kab: namaKab,
+//      PersenSentra: persen,
+//      color: isJember ? colors.orangeAccent[500] : colors.orangeAccent[700],
+//      isJember: isJember,
+//    };
+//  });
+
 
 const barData = chartData.map((item) => {
     const name = item[indexField];
