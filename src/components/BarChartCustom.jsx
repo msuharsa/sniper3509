@@ -94,7 +94,6 @@ const barData = chartData.map((item) => {
                         tickPadding: 5,
                         tickRotation: 90,
                     }
-                : null
             }
             enableLabel={false}
             enableGridX={false}
