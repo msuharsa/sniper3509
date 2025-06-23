@@ -67,7 +67,12 @@ const barData = chartData.map((item) => {
             data={barData}
             keys={["value"]}
             indexBy="indexName"
-            margin={{ top: 30, right: isDashboard ? 50 : 80, bottom: isDashboard ? 20 : 40, left: isDashboard ? 70 : 100 }}
+            margin={{ 
+                top: 30, 
+                right: isDashboard ? 30 : 80, 
+                bottom: isDashboard ? 60 : 40, 
+                left: isDashboard ? 40 : 100 
+            }}
             padding={0.3}
             colors={({ data }) => data.color}
             borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
