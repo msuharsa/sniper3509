@@ -122,15 +122,20 @@ const Dashboard = () => {
             justifyContent="space-between"
             alignItems={{ xs: "flex-start", sm: "center" }}
           >
-            <Box>
-              <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
-                Progres Pendataan Menurut Kabupaten/Kota
-              </Typography>
-            </Box>
+            <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
+              Progres Pendataan Menurut Kabupaten/Kota
+            </Typography>
           </Box>
           <Box height="250px" mt="-20px">
-            <BarChartCustom isDashboard={true} />
-          </Box>
+              <BarChartCustom
+                apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kab"
+                indexField="kodeKab"
+                valueField="persenSentra"
+                legendText="Kode Kab/Kota"
+                highlightCode="3509"
+                isDashboard={true}
+              />
+            </Box>
         </Box>
 
         {/* ROW 2 - Bar Chart */}
