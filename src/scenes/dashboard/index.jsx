@@ -127,6 +127,7 @@ const Dashboard = () => {
             </Typography>
           </Box>
           <Box height="250px">
+              layout={"horizontal"}
               <BarChartCustom
                 apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kab"
                 indexField="kodeKab"
