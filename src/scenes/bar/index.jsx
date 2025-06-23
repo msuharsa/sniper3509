@@ -30,6 +30,7 @@ const Bar = () => {
             valueField="persenSentra"
             legendText="Kode Kab/Kota"
             highlightCode="3509"
+            layout={"vertical"}
           />
         </Box>
       </Box>
