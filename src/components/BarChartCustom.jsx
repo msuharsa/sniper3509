@@ -37,15 +37,24 @@ useEffect(() => {
     axios
         .get(apiUrl)
         .then((res) => {
-        const items = res.data; // <-- Langsung ambil array
+        console.log("RESPON API:", res.data);
+
+        const items = Array.isArray(res.data) ? res.data : res.data.data || [];
+
+        if (!Array.isArray(items)) {
+            console.error("Data bukan array:", items);
+            return;
+        }
+
         const cleaned = items
-        .filter((d) =>
+            .filter((d) =>
             d[valueField] != null &&
             d[valueField] !== "" &&
             !isNaN(parseFloat(d[valueField])) &&
             d[indexField]
-        )
-        .sort((a, b) => parseFloat(a[valueField]) - parseFloat(b[valueField]));
+            )
+            .sort((a, b) => parseFloat(a[valueField]) - parseFloat(b[valueField]));
+
         setChartData(cleaned);
         })
         .catch((err) => console.error("Gagal fetch data:", err));
