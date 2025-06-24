@@ -127,15 +127,15 @@ const Dashboard = () => {
             </Typography>
           </Box>
           <Box height="250px">
-              <BarChartCustom
-                apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kab"
-                indexField="kodeKab"
-                valueField="persenSentra"
-                legendText="Kode Kab/Kota"
-                highlightValue="3509"
-                isDashboard={true}
-                margin={{ top: 10, right: 30, bottom: 60, left: 40 }}
-              />
+            {/* Grafik Row 1.1: Kabupaten/Kota */}
+            <ChartCard
+              title="Rekap Kabupaten/Kota"
+              apiUrl="https://opensheet.vercel.app/1TWez2clXj6cu_qh_Alg-zQlnQSbjKnwYjNC_TlqOxww/Rekap_Kab"
+              indexField="Kode Kab"
+              valueField="PersenSentra"
+              legendText="Kode Kab./Kota"
+              highlightValue="3509"
+            />
             </Box>
         </Box>
 
