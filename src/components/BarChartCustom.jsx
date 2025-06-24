@@ -37,7 +37,6 @@ useEffect(() => {
     axios
         .get(apiUrl)
         .then((res) => {
-        console.log("RESPON API:", res.data);
 
         const items = Array.isArray(res.data) ? res.data : res.data.data || [];
 
@@ -70,7 +69,7 @@ const barData = chartData.map((item) => {
     return {
         indexName: name,
         value,
-        color: isHighlight ? colors.orangeAccent[100] : colors.orangeAccent[400],
+        color: isHighlight ? colors.orangeAccent[200] : colors.orangeAccent[400],
         isHighlight,
     };
 });
@@ -83,7 +82,7 @@ const barData = chartData.map((item) => {
                 y={bar.y + bar.height / 2}
                 alignmentBaseline="middle"
                 fontSize={11}
-                fill={theme.palette.mode === "dark" ? colors.orangeAccent[400] : colors.orangeAccent[700]}
+                fill={theme.palette.mode === "dark" ? colors.orangeAccent[200] : colors.orangeAccent[400]}
             >
                 {bar.data.value.toFixed(2)}%
             </text>
