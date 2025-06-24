@@ -2,7 +2,8 @@
 
 import { Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import BarChartCustom from "../../components/BarChartCustom";
+import ChartCard from "../../components/ChartCard";
+//import BarChartCustom from "../../components/BarChartCustom";
 
 const BarChartMultiple = () => {
   const theme = useTheme();
@@ -15,38 +16,38 @@ const BarChartMultiple = () => {
   };
 
   // Komponen ChartCard reusable
-  const ChartCard = ({
-    title,
-    apiUrl,
-    indexField,
-    valueField,
-    legendText,
-    highlightValue,
-  }) => (
-    <Box
-      gridColumn={{ xs: "span 12", sm: "span 6" }}
-      gridRow="span 2"
-      sx={cardStyle}
-    >
-      <Typography
-        variant="h5"
-        fontWeight="600"
-        mb="20px"
-        color={colors.grey[100]}
-      >
-        {title}
-      </Typography>
-      <Box height="500px">
-        <BarChartCustom
-          apiUrl={apiUrl}
-          indexField={indexField}
-          valueField={valueField}
-          legendText={legendText}
-          highlightValue={highlightValue}
-        />
-      </Box>
-    </Box>
-  );
+//  const ChartCard = ({
+//    title,
+//    apiUrl,
+//    indexField,
+//    valueField,
+//    legendText,
+//    highlightValue,
+//  }) => (
+//    <Box
+//      gridColumn={{ xs: "span 12", sm: "span 6" }}
+//      gridRow="span 2"
+//      sx={cardStyle}
+//    >
+//      <Typography
+//        variant="h5"
+//        fontWeight="600"
+//        mb="20px"
+//        color={colors.grey[100]}
+//      >
+//        {title}
+//      </Typography>
+//      <Box height="500px">
+//        <BarChartCustom
+//          apiUrl={apiUrl}
+//          indexField={indexField}
+//          valueField={valueField}
+//          legendText={legendText}
+//          highlightValue={highlightValue}
+//        />
+//      </Box>
+//    </Box>
+//  );
 
   return (
     <Box m={{ xs: "10px", sm: "20px" }}>
