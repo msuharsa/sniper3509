@@ -55,7 +55,8 @@ useEffect(() => {
 const barData = chartData.map((item) => {
     const name = item[indexField];
     const value = parseFloat(item[valueField]) || 0;
-    const isHighlight = highlightCode ? name.includes(Number(highlightCode)) : false;
+    const isHighlight = highlightCode ? name.includes(String(highlightCode)) : false;
+    console.log("DEBUG", { name, highlightCode, isHighlight });
 
     return {
         indexName: name,
