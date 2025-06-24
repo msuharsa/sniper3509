@@ -132,7 +132,7 @@ const Dashboard = () => {
                 indexField="kodeKab"
                 valueField="persenSentra"
                 legendText="Kode Kab/Kota"
-                highlightCode="3509"
+                highlightValue="3509"
                 isDashboard={true}
                 margin={{ top: 10, right: 30, bottom: 60, left: 40 }}
               />

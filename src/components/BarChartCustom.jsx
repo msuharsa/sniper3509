@@ -26,7 +26,7 @@ const BarChartCustom = ({
     indexField,
     valueField,
     legendText,
-    highlightCode,
+    highlightValue,
     isDashboard = false,
 }) => {
 const theme = useTheme();
@@ -64,8 +64,8 @@ useEffect(() => {
 const barData = chartData.map((item) => {
     const name = item[indexField];
     const value = parseFloat(item[valueField]) || 0;
-    const isHighlight = highlightCode ? name.includes(String(highlightCode)) : false;
-    console.log("DEBUG", { name, highlightCode, isHighlight });
+    const isHighlight = highlightValue ? name.includes(String(highlightValue)) : false;
+    console.log("DEBUG", { name, highlightValue, isHighlight });
 
     return {
         indexName: name,
